@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<script src="stemsetdata.js" type="text/javascript"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+
+
+</h:head>
+<h:body onload="startup()">
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<h:inputHidden value="#{stemBrowser.setId}" id="hiddenPos"/>
+
+
+	<div id="main">
+
+		<p:outputPanel id="out1">
+
+			<br/>
+		
+			<div style="padding-left:2%;padding-right:45%">
+			<table border="1" style="font-family:Arial;">
+				
+				<p:outputPanel rendered="#{stemBrowser.name == '' ? 'false': 'true'}">
+					<tr>
+						<td>Name</td>
+						<td>#{stemBrowser.name}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.derivation == null ? 'false': 'true'}">
+					<tr>
+						<td>Derivation</td>
+						<td>#{stemBrowser.derivation}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.stemCellType == null ? 'false': 'true'}">
+					<tr>
+						<td>Stem Cell Type</td>
+						<td>#{stemBrowser.stemCellType}</td>
+					</tr>
+				</p:outputPanel>
+				
+				
+				<p:outputPanel rendered="#{stemBrowser.species == '' ? 'false': 'true'}">
+					<tr>
+						<td>Organism</td>
+						<td>#{stemBrowser.species}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.sample == null ? 'false': 'true'}">
+					<tr>
+						<td>Sample</td>
+						<td>#{stemBrowser.sample}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.summary == null ? 'false': 'true'}">
+					<tr>
+						<td>Summary</td>
+						<td>#{stemBrowser.summary}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.description == null ? 'false': 'true'}">
+					<tr>
+						<td>Details</td>
+						<td>#{stemBrowser.description}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.platform == null ? 'false': 'true'}">
+					<tr>
+						<td>Experimental Platform</td>
+						<td>#{stemBrowser.platform}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.numberOfGenes == '' ? 'false': 'true'}">
+					<tr>
+						<td>Number of Genes</td>
+						<td>#{stemBrowser.numberOfGenes}</td>
+					</tr>
+				</p:outputPanel>
+				<p:outputPanel rendered="#{stemBrowser.pubmedId[0] == '' ? 'false': 'true'}">
+					
+					<tr>
+						<td>Pubmed Id</td>
+						<td>
+							<ui:repeat var="pid" value="#{stemBrowser.pubmedId}">
+					
+								<a href="http://www.ncbi.nlm.nih.gov/pubmed/#{pid}">#{pid}</a>
+					
+							</ui:repeat>
+						</td>
+					</tr>
+				</p:outputPanel>
+				
+				
+				
+				<p:outputPanel rendered="#{stemBrowser.title == null ? 'false': 'true'}">
+					<tr>
+						<td>Publication Title</td>
+						<td>#{stemBrowser.title}</td>
+					</tr>
+				</p:outputPanel>
+				
+				
+				
+				<p:outputPanel rendered="#{stemBrowser.publicationAbstract == null ? 'false': 'true'}">
+					<tr>
+						<td>Publication Abstract</td>
+						<td>#{stemBrowser.publicationAbstract}</td>
+					</tr>
+				</p:outputPanel>
+				
+				<p:outputPanel rendered="#{stemBrowser.publicationAbstract == null ? 'false': 'true'}">
+				
+					<p:outputPanel rendered="#{stemBrowser.source[0] != '' ? 'true': 'false'}">
+				
+						<tr>
+							<td>Source</td>
+					
+							<p:outputPanel rendered="#{stemBrowser.source[1] == 'x' ? 'true': 'false'}">
+								<td>#{stemBrowser.source[0]}</td>
+							</p:outputPanel>
+					
+							<p:outputPanel rendered="#{stemBrowser.source[1] != 'x' ? 'true': 'false'}">
+								<td>
+						
+									<a href="http://#{stemBrowser.source[1]}">#{stemBrowser.source[0]}</a>
+								</td>
+						
+						
+							</p:outputPanel>
+					
+					
+						</tr>
+					</p:outputPanel>
+				</p:outputPanel>
+										
+			
+			</table>
+			</div>
+			<div style="padding-left:2%">
+			<br/>
+			<p:accordionPanel activeIndex="null" style="width:20%;">
+			
+				<p:tab title="Genes">
+				
+					<ui:repeat var="setDs" value="#{stemBrowser.setD}">
+					
+						<h:outputLink target="_blank" value="http://www.ncbi.nlm.nih.gov/gene/#{setDs[0]}" style="color:blue">
+							#{setDs[1]}
+						</h:outputLink>
+						
+						
+						<br/>
+					</ui:repeat>
+				
+				</p:tab>
+			</p:accordionPanel>
+		
+		</div>
+		</p:outputPanel>
+		
+	
+	</div>
+
+
+	<p:commandButton id="update1" value="update1" update="sc:out1" action="#{stemBrowser.goSetData}" style="display:none"/>
+
+	<ui:include src="header2.xhtml"/>
+</h:form>
+</h:body></html>

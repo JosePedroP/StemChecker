@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+  	<title>Header</title>
+	<link rel="stylesheet" type="text/css" href="./css/dropdown.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/test1.css"/>
+</h:head>
+<h:body>
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td valign="bottom" width="100%" style="padding-left: 30px;padding-bottom: 10px;padding-top:10px">
+				<a href="stemsethome.jsf">
+					<img src="./images/Logo.png"  width="300" alt="logo" border="0"/>
+				</a>
+			</td>
+            <td valign="bottom" style="padding-right:40px;padding-bottom:10px">
+            	<a href="http://www.sysbiolab.eu" target="sysbiolab">
+            		<img src="./images/sysbiolablogo.png" width="250" alt="sysbiolab-logo" border="0"/>
+				</a>
+            </td>
+        </tr>
+        <tr>
+        	<td colspan="2" align="center">
+        		<p:toolbar>
+					<p:toolbarGroup align="left">
+					
+						
+					
+        				<p:commandButton type="button" value="Home" onclick="window.location=document.getElementById('clickMeToo3').href;"/>
+        				<p:commandButton type="button" value="Analysis" onclick="window.location=document.getElementById('clickMeToo').href;"/>
+        				<p:commandButton type="button" value="Browse Sets" onclick="window.location=document.getElementById('clickMeToo2').href;"/>
+        				<p:commandButton type="button" value="Help" onclick="window.location=document.getElementById('clickMeToo4').href;"/>
+        				<p:commandButton type="button" value="Team" onclick="window.location=document.getElementById('clickMeToo5').href;"/>
+        				<p:commandButton type="button" value="Contact" onclick="window.location=document.getElementById('clickMeToo6').href;"/>
+        				<p:commandButton type="button" value="News" onclick="window.location=document.getElementById('clickMeToo7').href;"/>
+        				<!-- <p:commandButton type="button" value="Help" onclick="window.location=document.getElementById('clickMeToo2').href;"/>
+        				<p:commandButton type="button" value="News" onclick="window.location=document.getElementById('clickMeToo3').href;"/>
+        				
+						
+						<p:menuButton value="Data">
+			            	<p:menuitem value="Description"/>  
+            				<p:menuitem value="Statistics"/> 
+						</p:menuButton>
+        				<p:commandButton type="button" value="News"/>
+        				<p:commandButton type="button" value="Help"/>
+        				<p:commandButton type="button" value="Contacts"/> -->
+					</p:toolbarGroup>
+				</p:toolbar>
+        	</td>
+        </tr>
+        <tr>
+        	<td colspan="2" align="center">	
+        	</td>
+        </tr>
+	</table>
+	
+	<p:outputPanel id="linkater" style="display:none">
+		<a href="stemchecker.jsf" id="clickMeToo">stemchecker.jsf</a>
+		<a href="stemcheckerbrowser.jsf" id="clickMeToo2">stemcheckerbrowser.jsf</a>
+		<a href="stemsethome.jsf" id="clickMeToo3">stemsethome.jsf</a>
+		<a href="stemsethelp.jsf" id="clickMeToo4">stemsethelp.jsf</a>
+		<a href="stemsetteam.jsf" id="clickMeToo5">stemsetteam.jsf</a>
+		<a href="stemsetcontact.jsf" id="clickMeToo6">stemsetcontact.jsf</a>
+		<a href="version.jsf" id="clickMeToo7">version.jsf</a>
+	</p:outputPanel>
+	
+</h:body></html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"></link>
+    <link rel="stylesheet" type="text/css" href="sequences.css"></link>
+
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="main">
+	
+	<div id="sequence"></div>
+    <div id="chart">
+       	<div id="explanation" style="visibility: hidden;">
+          	<span id="percentage"></span><br/>
+			<!--  of visits begin with this sequence of pages-->
+       	</div>
+    </div>
+	
+	
+	
+	
+	
+		<div style="display:none" >	
+			<p:fileUpload id="upload" />
+		</div>
+	</div>
+	
+	<!-- 
+    <div id="sidebar">
+      <input type="checkbox" id="togglelegend"></input> Legend<br/>
+      <div id="legend" style="visibility: hidden;"></div>
+    </div>
+     -->
+    
+	
+	<script type="text/javascript" src="sequences.js"></script>
+    <script type="text/javascript">
+      // Hack to make this example display correctly in an iframe on bl.ocks.org
+      d3.select(self.frameElement).style("height", "700px");
+  </script> 
+  
+	<h:outputLink value="s" id="dalink" target="new" style="visibility: hidden">
+		linky
+	</h:outputLink>
+  
+<!-- <ui:include src="header2.xhtml"/> -->	
+</h:form>
+	
+	
+<p style="font-size:22px">The Sunburst chart demonstrates in a synthetic and intuitive way the composition of the gene sets that are present in StemChecker.</p>
+	
+<form action="stemcheckerbrowsertable.jsf">
+    <input type="submit" value="Table" style="width: 70px; height: 40px; font-size:20px" title="Detailed information about the curated stemness signatures and TF target gene sites included in StemChecker."></input>
+</form>
+</h:body></html>

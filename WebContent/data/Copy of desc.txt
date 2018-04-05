@@ -1,0 +1,168 @@
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Dummy
+Molecular signature (“stemness”) of the Human embryonic stem cells (huES cells)
+Gene expression patterns in huES cell lines were assessed by comparing expression to huURNA using oligonucleotide glass arrays. This geneset contains 92 genes that are upregulated by 3-fold or higher level that were enriched and common  to all 6 huES cell lines (overall similarity coefficient >0.85) relative to other tissues. This study compares gene expression between 6 huES cell lines and pooled RNA from multiple tissues (universal RNA; hu URNA).
+6 huES cell lines (BG01, BG02, GE01, GE09, PES and TE06) and pooled RNA from multiple tissues (universal RNA; huURNA) as control.
+Oligo nucleotide glass microarray
+92
+15070671
+See table 3, see also Table S2 in the Supplemental Document from the original publication
+Biological and Molecular Heterogeneity of Breast Cancers Correlates with Their Cancer Stem Cell Content
+Comparison of the global gene expression profiles associated with the two PKH26 fractions, in each sample, resulted in 4023 probesets differentially expressed in Pool #1, 4659 probesets in Pool #2, and 5278 probesets in Pool #3. To define the ‘‘hNMSC signature,’’it was done an overlap between the three pools of probesets  originating a ‘‘3/3 signature’’ that contains 354 genes (P<10-60) that show the same trend of regulation in all 3 pools, and is therefore a subset of the hNMSC signature.
+Mammary epithelial cells (hNMSCs) - pool of three tumors - G1(well differentiated tumor) and G3 (Poorly differentiated tumor)
+Affymetrix HG-U133_Plus_2
+354
+20074520
+See table hNMSC-signature in Suplemental Document Table S1 from the original publication. Filter it in FC regulation for "D" and "I" to obtain the genes of the overlap.
+Cross comparison of adult tissue stem cells, including marrow HSCs, neural crest stem cells, hair bulge stem cells, and mammary stem cells, clustered together by coordinate activation of a distinct collection of gene sets to define adult tissue stemness
+Mouse stem cell gene module map: gene sets versus expression arrays , where indicates that the individual genes within the gene set, are significantly induced (or repressed) in the expression array more than expected by chance (FDR<0.05, p<0.01). The clustering originated two groups of stem cells, labeled “ESC-like” and “adult tissue stem”. In the adult tissue stem dataset was collected 709 genes that were upregulated 1.5-fold.
+bone marrow HSCs from three independent studies, hair bulge stem cells from two independent studies, neural stem cells from one study, and mammary stem cells
+Spotted DNA/cDNA array
+709
+18397753
+See table S4 in the Supplemental Document Table S2 from the original publication and GSE10423
+Cross comparison of adult tissue stem cells, including marrow HSCs, neural crest stem cells, hair bulge stem cells, and mammary stem cells, clustered together by coordinate activation of a distinct collection of gene sets to define embryonic stem cell core
+Mouse stem cell gene module map: gene sets versus expression arrays , where indicates that the individual genes within the gene set, are significantly induced (or repressed) in the expression array more than expected by chance (FDR<0.05, p<0.01). The clustering originated two groups of stem cells, labeled “ESC-like” and “adult tissue stem”. In order to define the core ESC-like module, we converted the mouse Entrez Gene IDs (EGIDs) of the genes in the mouse ESC-like module to corresponding human EGIDs based on best reciprocal BLAST hit and then looked for the shared EGIDs between the mouse and human ESClike modules. The embryonic stem cell core contain 335 genes.
+bone marrow HSCs from three independent studies, hair bulge stem cells from two independent studies, neural stem cells from one study, and mammary stem cells
+Spotted DNA/cDNA array
+335
+18397753
+See table S6 in the Supplemental Document Table S2 from the original publication and GSE10423

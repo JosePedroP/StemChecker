@@ -1,0 +1,8 @@
+4684	CD56
+4162	CD146
+1003	VE-Cadherin
+87	alpha-smoothmuscleactin
+2170	FABP3
+3679	Integrinalpha7
+1674	Desmin
+4627	MyosinHeavyChain

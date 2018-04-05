@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<script src="Chart.js" type="text/javascript"/>
+	<script src="sorttable.js" type="text/javascript"/>
+	<script src="stemchecker.js" type="text/javascript"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+	
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="main">
+	
+		
+		<h1>What is StemChecker?</h1>
+		<p>StemChecker is a web-server that enables researchers to rapidly check whether a given list of genes can be associated with stemness. 
+		For this purpose, we curated numerous published <i>stemness signatures</i> derived by alternative approaches. StemChecker compares the 
+		genes uploaded by the user with those in curated <i>stemness signatures</i>, and evaluates the statistical significance of the overlap. 
+		The results are then displayed in alternative formats showing the overall association of the whole set of input genes with stemness, 
+		as well as the occurrence of individual genes in the curated <i>stemness signatures</i>. Additionally, StemChecker verifies whether 
+		the input genes are targeted by a set of transcription factors linked to pluripotency and stem cell maintenance, and displays these 
+		results.</p>
+	
+		<h1>Why StemChecker?</h1>
+		<p>In recent years a large number of studies have been undertaken to define the characteristic properties of stem cells, i.e. their 
+		capacity for self-renewal and for differentiation into other cell types. As a result of these studies, various gene sets have been 
+		identified: the so-called <i>stemness signatures</i>, which are considered to be necessary, or at least associated, with the defining 
+		characteristics of stem cells. However, to date, no “universal” <i>stemness signature</i> has been established. In fact, published 
+		<i>stemness signatures</i> can differ considerably, especially the ones derived by different experimental approaches.</p>
+		<p>Despite their heterogeneity, <i>stemness signatures</i> are an invaluable resource for the study of stem cell generation, maintenance 
+		and differentiation. Furthermore, <i>stemness signatures</i> have been found to be important indicators for the study of diseases 
+		such as cancer. However, their usage has been hampered by the lack of a comprehensive resource, as well as easy-to-use tools for analysis. 
+		Most published <i>stemness signatures</i> are hidden as supplementary materials or scattered across multiple repositories, limiting a 
+		broader access and wider usage.</p>
+		<p>For this reason, we have developed StemChecker. This unified web-tool allows researchers to easily confirm whether their genes of 
+		interest are included in a comprehensive set of published <i>stemness signatures</i>, without having to carry out lengthy literature 
+		curation or data processing.</p>
+		
+	
+		<h1>How can I use StemChecker?</h1>
+		<p>To begin the analysis, click on the Analysis button above. This opens the page where one can insert the genes of interest in the 
+		text field or upload them in a file, containing official gene symbols or Entrez Gene IDs as gene identifiers, each separated either 
+		by empty spaces or commas. On this page it can also be selected which <i>stemness signatures</i> should be included in the analysis, 
+		and whether the generated checkerboards should be ordered by rows or columns. After pressing the <i>Search &amp; Analyse</i> button, 
+		the results of the analysis are displayed on three pages, each in its own tab: (i) <i>Overview/Stats</i> showing the overlap of the 
+		input genes with <i>stemness signatures</i> and its statistical significance, (ii) <i>Stemness Match</i> displaying a 
+		checkerboard-like table which indicates the occurrence of individual genes in different <i>stemness signatures</i> and (iii) <i>TF 
+		Match</i> showing which of the input genes are targets of pluripotency-associated transcription factors.</p>
+		
+		
+		<p>You will find a detailed step-by-step tutorial on the <a href="stemsethelp.jsf">Help page</a>. For a start, you can also simply 
+		lean back and enjoy our short video that will give you a quick run over the main features of StemChecker.</p>
+	
+		<br/>
+		
+		<div style="text-align:center;width:100%;" >
+			<iframe width="620" height="415" src="https://www.youtube.com/embed/4euq84rGk_c"/>
+		</div>
+		
+		
+		<div style="display:none" >	
+			<p:fileUpload id="upload" />
+		</div>
+	</div>
+	
+	<br/>			
+	<br/>	
+    <div style="font-size:1.20em">
+		<strong><a href="http://nar.oxfordjournals.org/content/early/2015/05/24/nar.gkv529.abstract?keytype=ref&amp;ijkey=QnNu1UyA7s5Vm4I">StemChecker is described in the Nucleic Acids Research Web Server Issue 2015</a></strong>.
+	</div>
+	
+	<ui:include src="header2.xhtml"/>
+
+</h:form>
+</h:body></html>

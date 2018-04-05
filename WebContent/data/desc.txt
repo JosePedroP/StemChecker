@@ -1,0 +1,378 @@
+Hs ESC Oct4 Targets Boyer
+ChIP-on-chip to identify genes whose promotors are activated by the transcription factor Oct4 in hESC. Probes were 60-mer oligonucletides and covered the region from -8 kb to +2 kb relative to the gene transcript start sites.
+hESCs
+Agilent
+290
+16153702
+Boyer, L. et al. Core Transcriptional Regulatory Circuitry in Human Embryonic Stem Cells. Cell 122(6): 947-956 (2005)
+Hs ESC Nanog Targets Boyer
+ChIP-on-chip to identify genes whose promotors are activated by the transcription factor Nanog in hESC. Probes were 60-mer oligonucletides and covered the region from −8 kb to +2 kb relative to the gene transcript start sites.
+hESCs
+Agilent
+988
+16153702
+Boyer, L. et al. Core Transcriptional Regulatory Circuitry in Human Embryonic Stem Cells. Cell 122(6): 947-956 (2005)
+Hs ESC Sox2 Targets Boyer
+ChIP-on-chip to identify genes whose promotors are activated by the transcription factor Sox2 in hESC. Probes were 60-mer oligonucletides and covered the region from-8 kb to +2 kb relative to the gene transcript start sites.
+hESCs
+Agilent
+734
+16153702
+Boyer, L. et al. Core Transcriptional Regulatory Circuitry in Human Embryonic Stem Cells. Cell 122(6): 947-956 (2005)
+Hs ESC NOS Targets Boyer
+ChIP-on-chip to identify genes whose promotors are co-activated by the transcription factors Nanog, Oct4 and Sox2 in hESC. Probes were 60 nucleotides long and covered the region from −8 kb to +2 kb relative to the gene transcript start sites.
+hESCs
+Agilent
+179
+16153703
+Boyer, L. et al. Core Transcriptional Regulatory Circuitry in Human Embryonic Stem Cells. Cell 122(6): 947-956 (2005)
+Hs ESC Consensus Assou
+Meta-analysis of independent studies. Identifies genes  upregulated in hESCs when compared to differentiated cell types in at least three independent studies.Techniques: microarrays, ESTs scanning, MPSS, Illumina beads studies
+hESCs vs differentiated cells (for particular types of differentiated cells see article). Cut-off: Fold change ≥ 2 
+see original studies
+1070
+17204602
+Assou, S. et al. A meta-analysis of human embryonic stem cells transcriptome integrated into a web-based expression atlas. Stem cells (Dayton, Ohio) 25,961-73 (2007)
+Hs ESC Differentiation Assou
+Meta-analysis of independent studies. Identifies genes downregulated in hESCs when compared to differentiated cell types in at least three independent studies.Techniques: microarrays, ESTs scanning, Illumina beads studies
+hESCs vs differentiated cells (for particular types of differentiated cells see article). Cut-off: Fold change ≤ 0.5 
+see original studies
+782
+17204602
+Assou, S. et al. A meta-analysis of human embryonic stem cells transcriptome integrated into a web-based expression atlas. Stem cells (Dayton, Ohio) 25,961-73 (2007)
+Hs SC Palmer
+A standard signal processing tool (a finite impulse response filter - FIR) was applied to data retrieved from a curated database (Concordia) to  identify a set of genes with a range of expression intensities among stem cell samples that was most distinct from non-stem cell samples
+Different kinds of human pluripotent and partially committed stem cells vs several types of human tissue or cultured human cell lines (including samples derived from normal tissues, immortalized cell lines and a variety of cancers)
+Affymetrix HGU133+ 2.0
+189
+22909066
+Palmer, N. P., et al. A gene expression profile of stem cell pluripotentiality and differentiation is conserved across diverse solid and hematopoietic cancers. Genome biology 13, R71 (2012)
+Mm_ESC_Ivanova2002
+Gene expression profiles were obtained for murine Embryonic Stem Stem Cell line CCE. The comparison of hematopoietic with nonhematopoietic SCs identified the gene products expressed in multiple SC types. Fold change was calculated using the Bone Marrow Lin+ sample as the baseline.
+Mouse Embryonic Stem Cell line CCE
+Affymetrix MG-U74v2 A, B and C
+967
+12228721
+<www.sciencemag.org/cgi/content/full/1073823/DC1;www.sciencemag.org/cgi/content/full/1073823/DC1
+Mm_NSC_Ivanova2002
+Gene expression profiles were obtained for murine Neural Stem Cells (NSC), and the comparison of hematopoietic with nonhematopoietic SCs identified the gene products expressed in multiple SC types. Fold change was calculated using the Bone Marrow Lin+ sample as the baseline.
+Neural Stem Cells isolated from the lateral ventricle striatum of 14-day-old C57B/6 mouse embryos.
+Affymetrix MG-U74v2 A, B and C
+840
+12228721
+<www.sciencemag.org/cgi/content/full/1073823/DC1;www.sciencemag.org/cgi/content/full/1073823/DC1
+Mm_HSC_Ivanova2002
+Gene expression profiles were first identified separately for murine fetal and adult Hematopoietic Stem Cells (HSC), then these profiles were compared to derive a shared HSC profile.
+Two hematopoietic samples: Murine fetal hematopoietic fractions purified from day 14-14.5 fetal livers; and Murine adult bone marrow (BM) hematopoietic samples purified from cells from the femora and tibiae of 2- to 4- month-old C57BL/6J mice.
+Affymetrix MG-U74v2 A, B and C 
+712
+12228721
+<www.sciencemag.org/cgi/content/full/1073823/DC1;www.sciencemag.org/cgi/content/full/1073823/DC1
+Mm_ESC_Ramalho2002
+This dataset was obtained by identifying genes enriched in the mouse Embryonic Stem Cell (ESC) population when compared to the differentiated cells from Lateral Ventricles of the Brain and from the main cell population of the Bone Marrow (only genes that showed a significant enrichment in both comparisons were selected). In each comparison, a 90% confidence interval was calculated for the fold change in gene expression, and the lower limit of this interval—the lower confidence bound (LCB)—was used as a measure of enrichment in gene expression. Genes with LCB above 1.2 (which corresponds to an estimated fold change of 1.9 in gene expression) were selected as "enriched" in ESCs.
+Mouse C57Bl/6 Embryonic Stem Cells 
+Affymetrix U74Av2
+1141
+12228720
+<http://www.sciencemag.org/content/suppl/2002/10/16/1072530.DC1.html;http://www.sciencemag.org/content/suppl/2002/10/16/1072530.DC1.html
+Mm_NSC_Ramalho2002
+This dataset was obtained by identifying genes enriched in the mouse Neural Stem Cell (NSC) population when compared to differentiated cells from Lateral Ventricles of the Brain (corresponding to differentiated NSCs, i.e. the baseline for the comparison). A 90% confidence interval was calculated for the fold change in gene expression, and the lower limit of this interval—the lower confidence bound (LCB)—was used as a measure of enrichment in gene expression. Genes with LCB above 1.2 (which corresponds to an estimated fold change of 1.9 in gene expression) were selected as "enriched" in NSCs.
+Neurospheres enriched in Neural Stem Cells and early progenitors isolated from Lateral Ventricles of the Brain from C57Bl/6 8-week old mice.
+Affymetrix U74Av2
+1538
+12228720
+<http://www.sciencemag.org/content/suppl/2002/10/16/1072530.DC1.html;http://www.sciencemag.org/content/suppl/2002/10/16/1072530.DC1.html
+Mm_HSC_Ramalho2002
+This dataset was obtained by identifying genes enriched in the mouse Hematopoietic Stem Cell (HSC) population when compared to differentiated cells from the main cell population of the Bone Marrow (corresponding to differentiated HSCs, i.e. the baseline for the comparison). A 90% confidence interval was calculated for the fold change in gene expression, and the lower limit of this interval—the lower confidence bound (LCB)—was used as a measure of enrichment in gene expression. Genes with LCB above 1.2 (which corresponds to an estimated fold change of 1.9 in gene expression) were selected as "enriched" in HSCs.
+Cells isolated from the bone marrow extracted from the femur and tibia of C57BL/6 mice
+Affymetrix U74Av2
+1231
+12228720
+<http://www.sciencemag.org/content/suppl/2002/10/16/1072530.DC1.html;http://www.sciencemag.org/content/suppl/2002/10/16/1072530.DC1.html
+Mm_ESC_Fortunel2003
+E14 pluripotent Embryonic Stem Cells (ESC) were cultured following established methods on embryonic fibroblast feeder layer in the presence of leukemic inhibitory factor. Enriched genes were evaluated by fold change (FC) value or lower confidence bound (LCB) score, and ranked by their log value.
+E14 pluripotent Embryonic Stem Cells
+Affymetrix U74Av2
+1066
+14563990
+
+Mm_NSC_Fortunel2003
+Neural Progenitor/Stem Cells (NPCs) were cultured as neurospheres derived from E12 embryos. Enriched genes were evaluated by fold changes (FC) value or lower confidence bound (LCB) score, and ranked by their log value.
+Neural Progenitor/Stem Cells (NPCs) derived from E12 embryos
+Affymetrix U74Av2
+1066
+14563990
+
+Mm_ESC_Gaspar2012
+CGR8 murine ESC line timecourse (‘‘hanging drop’’ protocol for obtaining Embryoid Bodies (EBs); RNA isolated each day until day 7 and finally at day 10). A list of differentially expressed transcripts was obtained from genes found in all pairwise statistical comparisons between ESCs (day 0) and days 3, 4, 5, 6, 7 and 10. Differential expression was determined, with threshold value of fold change (FC) 2 in absolute scale, by the R Limma package (linear model implementation), followed by a Benjamini-Hochberg multiple testing correction (1% FDR).
+CGR8 murine ESC line
+Affymetrix GeneChip Mouse Genome 430 2.0
+160
+22420508
+<www.ebi.ac.uk/arrayexpress/experiments/E-TABM-672;www.ebi.ac.uk/arrayexpress/experiments/E-TABM-672 
+Molecular signature (“stemness”) of the Human embryonic stem cells (huES cells)
+Gene expression patterns in huES cell lines were assessed by comparing expression to huURNA using oligonucleotide glass arrays. This geneset contains 92 genes that are upregulated by 3-fold or higher level that were enriched and common  to all 6 huES cell lines (overall similarity coefficient >0.85) relative to other tissues. This study compares gene expression between 6 huES cell lines and pooled RNA from multiple tissues (universal RNA; hu URNA).
+6 huES cell lines (BG01, BG02, GE01, GE09, PES and TE06) and pooled RNA from multiple tissues (universal RNA; huURNA) as control.
+Oligo nucleotide glass microarray
+92
+15070671
+See table 3, see also Table S2 in the Supplemental Document from the original publication
+Biological and Molecular Heterogeneity of Breast Cancers Correlates with Their Cancer Stem Cell Content
+Comparison of the global gene expression profiles associated with the two PKH26 fractions, in each sample, resulted in 4023 probesets differentially expressed in Pool #1, 4659 probesets in Pool #2, and 5278 probesets in Pool #3. To define the ‘‘hNMSC signature,’’it was done an overlap between the three pools of probesets  originating a ‘‘3/3 signature’’ that contains 354 genes (P<10-60) that show the same trend of regulation in all 3 pools, and is therefore a subset of the hNMSC signature.
+Mammary epithelial cells (hNMSCs) - pool of three tumors - G1(well differentiated tumor) and G3 (Poorly differentiated tumor)
+Affymetrix HG-U133_Plus_2
+354
+20074520
+See table hNMSC-signature in Suplemental Document Table S1 from the original publication. Filter it in FC regulation for "D" and "I" to obtain the genes of the overlap.
+Cross comparison of adult tissue stem cells, including marrow HSCs, neural crest stem cells, hair bulge stem cells, and mammary stem cells, clustered together by coordinate activation of a distinct collection of gene sets to define adult tissue stemness
+Mouse stem cell gene module map: gene sets versus expression arrays , where indicates that the individual genes within the gene set, are significantly induced (or repressed) in the expression array more than expected by chance (FDR<0.05, p<0.01). The clustering originated two groups of stem cells, labeled “ESC-like” and “adult tissue stem”. In the adult tissue stem dataset was collected 709 genes that were upregulated 1.5-fold.
+bone marrow HSCs from three independent studies, hair bulge stem cells from two independent studies, neural stem cells from one study, and mammary stem cells
+Spotted DNA/cDNA array
+709
+18397753
+See table S4 in the Supplemental Document Table S2 from the original publication and GSE10423
+Cross comparison of adult tissue stem cells, including marrow HSCs, neural crest stem cells, hair bulge stem cells, and mammary stem cells, clustered together by coordinate activation of a distinct collection of gene sets to define embryonic stem cell core
+Mouse stem cell gene module map: gene sets versus expression arrays , where indicates that the individual genes within the gene set, are significantly induced (or repressed) in the expression array more than expected by chance (FDR<0.05, p<0.01). The clustering originated two groups of stem cells, labeled “ESC-like” and “adult tissue stem”. In order to define the core ESC-like module, we converted the mouse Entrez Gene IDs (EGIDs) of the genes in the mouse ESC-like module to corresponding human EGIDs based on best reciprocal BLAST hit and then looked for the shared EGIDs between the mouse and human ESClike modules. The embryonic stem cell core contain 335 genes.
+bone marrow HSCs from three independent studies, hair bulge stem cells from two independent studies, neural stem cells from one study, and mammary stem cells
+Spotted DNA/cDNA array
+335
+18397753
+See table S6 in the Supplemental Document Table S2 from the original publication and GSE10423
+Mm SSC downregulation Kokkinaki
+A microarray study. Identifies genes downreagulated in spermatogonial stem cells in comparison to spematogonia non-stem cells
+Mouse type A spermatogonial stem cells (SSCs) vs nonstem spermatogonia cells. Stem cells were selected  by MACS (magnetic activated cell sorting) with an antibody to GDNF-receptor-alpha-1(GFRA1), as GFRA1 is expressed in SSCs and is required for their stemness. Four arrays were used: two for GFRA1-positive and and two for GFRA1-negative samples. Multiple probes for the same transcript were used. Cut-off: Fold change ≤ 2
+Affymetrix
+53
+19109221
+Kokkinaki, M. et al. The Molecular Signature of Spermatogonial Stem/Progenitor Cells in the 6-Day-Old Mouse Testis.Biology of reproduction 80, 707-717 (2009)
+Mm SSC upregulation Kokkinaki
+A microarray study. Identifies genes upreagulated in spermatogonial stem cells in comparison to spematogonia non-stem cells
+Mouse type A spermatogonial stem cells (SSCs) vs nonstem spermatogonia cells. Stem cells were selected  by MACS (magnetic activated cell sorting) with an antibody to GDNF-receptor-alpha-1(GFRA1), as GFRA1 is expressed in SSCs and is required for their stemness. Four arrays were used: two for GFRA1-positive and and two for GFRA1-negative samples. Multiple probes for the same transcript were used. Cut-off: Fold change ≥ 2
+Affymetrix
+99
+19109221
+Kokkinaki, M. et al. The Molecular Signature of Spermatogonial Stem/Progenitor Cells in the 6-Day-Old Mouse Testis.Biology of reproduction 80, 707-717 (2009)
+Mm ISC Munoz
+2 microarray platforms (Agilent and Affymetrix) and  1 mass spectometry experiment were used to create a trancriptional and proteomic profile of intestinal stem cells (ISCs). Genes considered enriched in stem cells by mass spectometry and by one or both of the microarrays were identified.
+Trangenic mice ISCs (intestinal stem cells) vs their daughter differentiated) cells. Cells were retrieved from Lgr5-ki (Lgr5-EGFP-ires-CreERT2 knock-in) mice and were sorted according to GFP levels: GFP high (stem cells) and GFP low (daugter cells). Cut-off Affymetrix: P-value of <0.1,  an expression difference of >2-fold and average expression level in the GFP high arrays >20. Cut-off Agilent: q-value of <0.05% and expression difference of >2-fold
+Affymetrix and Agilent
+510
+22692129
+Munoz, J. et al. The Lgr5 intestinal stem cell signature: robust expression of proposed quiescent ‘+þ4’ cell markers.The EMBO Journal  31, 3079-3091(2012)
+Hs_Consensus_Stemness _Rate _Signatures _Shats_2010
+Meta-analysis of independent studies. CSR signature was defined by analising 4 different stemness signatures: Core embryonic stem cell–like signature (using mESC and hESC); ES exp1 signature; Invasiveness gene signature; iPS signature. The CSR tumour sets were then selected  as having high or low stem-like characteristics
+mESCs; hESCs; tumorigenic CD44+CD24-/lowlin- cells and normal breast epithelium; hiPS cells,  large collection of breast cancer tumors; 
+see original studies
+97 (90 genes upregulated and 7 downregulated in high CSR samples)
+21169407
+Shats, I et al. Using a stem cell-based signature to guide therapeutic selection in cancer. Cancer Res. 2011 Mar 1;71(5):1772-80 Supplementary Table 3
+Hs_iPS_Signature_Shats_2010
+Meta-analysis of available microarray expression data from a study in which  normal human fibroblasts were reprogrammed to iPS cells by OSKM factors.
+hiPS cells
+see original studies
+80
+21169407
+Shats, I et al. Using a stem cell-based signature to guide therapeutic selection in cancer. Cancer Res. 2011 Mar 1;71(5):1772-80 Supplementary Table 2
+Hs_HSC_top_genes_overexpressed_Huang_2008
+Meta-analysis of gene expression microarray datasets to obtain genes involved in stemness in cord blood CD133 HSCs. The top 100 genes most strongly expressed in HSCs are showned.
+Human CD133+ stem cells;  data sets comprised CD34+ HSCs (GSM51391 to GSM51408 from GEO GSE2666), hematopoietic cells (GEO GSE1140)
+Affymetrix TM HG-U133 plus 2.0; Affymetrix U133A
+95
+18308945
+Huang TS et al. Functional network reconstruction reveals somatic stemness genetic maps and dedifferentiation-like transcriptome reprogramming induced by GATA2. Stem Cells. 2008 May;26(5):1186-201 Table 1
+Hs_MSC_top_genes_overexpressed_Huang_2008
+Meta-analysis of gene expression microarray datasets to obtain genes involved in stemness in bone marrow MSCs. The top 60 genes most strongly expressed in MSCs are showned.
+Human Bone marrow MSCs
+Affymetrix TM HG-U133 plus 2.0
+59
+18308945
+Huang TS et al. Functional network reconstruction reveals somatic stemness genetic maps and dedifferentiation-like transcriptome reprogramming induced by GATA2. Stem Cells. 2008 May;26(5):1186-201 Table 2
+Hs_NSC_top_genes_overexpressed_Huang_2008
+Meta-analysis of gene expression microarray datasets to obtain genes involved in stemness in NSCs. The top 60 genes most strongly expressed in NSCs are showned.
+hNSCs
+Affymetrix TM HG-U133 plus 2.0
+54
+18308945
+Huang TS et al. Functional network reconstruction reveals somatic stemness genetic maps and dedifferentiation-like transcriptome reprogramming induced by GATA2. Stem Cells. 2008 May;26(5):1186-201 Table 3
+Hs_HSC&MSC&NSC_genes_overexpressed_Huang_2008
+Meta-analysis of gene expression microarray datasets to obtain genes involved in stemness in cord blood CD133 HSCs, NSCs, and bone marrow MSCs. Genes highly expressed that are common in all three somatic cells.
+Human CD133+ stem cells;  data sets comprised CD34+ HSCs (GSM51391 to GSM51408 from GEO GSE2666), hematopoietic cells (GEO GSE1140); Human Bone marrow MSCs; hNSCs
+Affymetrix TM HG-U133 plus 2.0
+117
+18308945
+Huang TS et al. Functional network reconstruction reveals somatic stemness genetic maps and dedifferentiation-like transcriptome reprogramming induced by GATA2. Stem Cells. 2008 May;26(5):1186-201 Table 4
+Hs_HSC&MSC&NSC&ESC_genes_overexpressed_Huang_2008
+Meta-analysis of gene expression microarray datasets to obtain genes involved in stemness in cord blood CD133 HSCs, NSCs, and bone marrow MSCs.  Genes highly expressed that are common in all three somatic cells and in ESC. 
+Human CD133+ stem cells;  data sets comprised CD34+ HSCs (GSM51391 to GSM51408 from GEO GSE2666), hematopoietic cells (GEO GSE1140); Human Bone marrow MSCs; hNSCs;hESC
+Affymetrix HGU133+ 2.0
+18
+18308945
+Huang TS et al. Functional network reconstruction reveals somatic stemness genetic maps and dedifferentiation-like transcriptome reprogramming induced by GATA2. Stem Cells. 2008 May;26(5):1186-201 Table 4
+Hs_HSC_upregulated_genes_Toren_2005
+Gene expression profile of enriched HSCs from both umbilical cord blood (CB) and mobilized peripheral blood (PB) cells expressing CD133. Genes up regulated by more than five fold in CD133+ CB and PB cells compared with CD133− cells are described in this dataset.
+hHSC CD133+ and CD133− ; The analysis focused on expressed genes that are enriched in CB and PB CD133+ cells compared with CD133− cells. CD133 expressing cells represent the stem cell–enriched population, and the CD133-negative cells represent the differentiated cells at various stages
+Affymetrix Human Hu133A
+107
+16140871
+Toren A et al. CD133-positive hematopoietic stem cell "stemness" genes contain many genes mutated or abnormally expressed in leukemia.Stem Cells. 2005 Sep;23(8):1142-53. Table 1
+Hs_HSC_down-regulated_genes_Toren_2005
+Gene expression profile of enriched HSCs from both umbilical cord blood (CB) and mobilized peripheral blood (PB) cells expressing CD133. Genes down regulated by more than 2 fold in CD133+ CB and PB cells compared with CD133− cells are described in this dataset.
+hHSC CD133+ and CD133− ; The analysis focused on expressed genes that are enriched in CB and PB CD133+ cells compared with CD133− cells. CD133 expressing cells represent the stem cell–enriched population, and the CD133-negative cells represent the differentiated cells at various stages
+Affymetrix Human Hu133A
+157
+16140871
+Toren A et al. CD133-positive hematopoietic stem cell "stemness" genes contain many genes mutated or abnormally expressed in leukemia.Stem Cells. 2005 Sep;23(8):1142-53. Supplemental Table 7
+Hs ESC&ECs upregulation Sperger
+A microarray study. Identifies genes upreagulated in hESCs (human embryonic stem cell) lines and EC (embryonal cacinoma) cell lines  in comparison to non-stem cells/non-stem cell lines.
+hESC lines and EC cell lines vs samples of normal testis and somatic cell lines. hESC lines: H1.1, H7, H9, H13, and H14. EC lines: NTERA2, NCITT, 2102EP, TERA1, 833KE, GCT27, and 1777N. Somatic cell lines: AGS (gastric cancer), Bxpc3 (pancreatic cancer), HCT116 (colon cancer), HCT15 (colon cancer), HFI-1 (B cell), Jurkat cells (T cell), LAM (B cell), MCF7 (breast cancer), T cell (MOLT 4), NB4 + RA (neutrophil like), SNU 16 cells (gastric cancer), U937 + PMA (macrophage like), HUVEC (EC), FTB Fibroblas (fetal thigh and buttocks fibroblas), F Fibroblast (foreskin fibroblast). Significance analysis of microarrays (SAM) used to desmontrate statistical signifficance in gene expression. Cut-off: Fold change ≥ 2
+cDNA microarrays
+687
+14595015
+Sperger, J. Gene expression patterns in human embryonic stem cells and human pluripotent germ cell tumors. PNAS. Developmental Biology. 100:23 (2013)
+Hs ESC&ECs downregulation Sperger
+A microarray study. Identifies genes downreagulated in hESCs (human embryonic stem cell) lines and EC (embryonal cacinoma) cell lines  in comparison to non-stem cells/non-stem cell lines.
+hESC lines and EC cell lines vs samples of normal testis and somatic cell lines. hESC lines: H1.1, H7, H9, H13, and H14. EC lines: NTERA2, NCITT, 2102EP, TERA1, 833KE, GCT27, and 1777N. Somatic cell lines: AGS (gastric cancer), Bxpc3 (pancreatic cancer), HCT116 (colon cancer), HCT15 (colon cancer), HFI-1 (B cell), Jurkat cells (T cell), LAM (B cell), MCF7 (breast cancer), T cell (MOLT 4), NB4 + RA (neutrophil like), SNU 16 cells (gastric cancer), U937 + PMA (macrophage like), HUVEC (EC), FTB Fibroblas (fetal thigh and buttocks fibroblas), F Fibroblast (foreskin fibroblast). Significance analysis of microarrays (SAM) used to desmontrate statistical signifficance in gene expression. Cut-off: Fold change ≤ 2
+cDNA microarrays
+360
+14595015
+Sperger, J. Gene expression patterns in human embryonic stem cells and human pluripotent germ cell tumors. PNAS. Developmental Biology. 100:23 (2013)
+Hs ESC Chia
+A whole genome RNAi screen on a hESC reporter cell line in which GFP fluorescence is used as a proxy for the undifferentiated state of hESCs. A whole genome Dharmacon SMARTpooled siRNA library targeting 21 121 human genes was used.
+H1 hESC trangenic cell line (H1 hESC with a green fluorescent protein (GFP) reporter construct driven by the POU5F1 upstream regulatory region. The screen was carried out in duplicate and the cells were imaged for GFP
+
+566
+20953172
+Chia, N.-Y. et al. A genome-wide RNAi screen reveals determinants of human embryonic stem cell identity. Nature 468, 316-20 (2010)
+Mm ESC Ding
+A RNAi screen on mouse  Oct4 reporter cell line (Oct4-Gip) in which GFP fluorescence was used as a proxy for the undifferentiated state of cells.  A genome-scale mouse endoribonuclease prepared (e)siRNA library containing 25057 esiRNAs was used. The readout was highthroughput FACS. 
+Mouse ESC Oct4 reporter cell line (Oct4-Gip) in which the expression of GFP is controlled by Oct4 regulatory elements. The screen was carried out in duplicate.
+
+214
+19345177
+Ding, L. et al. A Genome-Scale RNAi Screen for Oct4 Modulators Defines a Role of the Paf1 Complex for Embryonic Stem Cell Identity. Cell Stem Cell 4, 403-415 (2009)
+Mm ESC Hu
+In a primary screen, Oct4-GiP cells were transfected with smart pools of siRNAs targeting the vast majority of the mouse genome. GFP fluorescence was used as a proxy for the undifferentiated state of cells. Then, the four individual siRNAs of the pools were rescued against the primary hits for a secondary screen
+Mouse ESC Oct4 reporter cell line (Oct4-Gip) in which the expression of GFP is controlled by Oct4 regulatory elements. Both primary and secondary screens were performed in duplicate. Selected genes were verified with one or more siRNAs.
+
+147
+19339689
+Hu, G. et al. A genome-wide RNAi screen identifies a new transcriptional module required for self-renewal. Genes & development 23:837-848 (2009)
+Mm ESC Wang
+A RNAi screen on mouse ESC lines identified genes that regulate both ESC expansion and stem cell marker expression.  ESC expansion was acessed by Alamar Blue activity and the stem cell marker expression by alkaline phosphatase activity
+Mouse ESC lines D3 and EBRTch3. All selected genes were verified by at least two independent shRNAs
+
+132
+22899353
+Wang, C. et al. A shRNA Functional Screen Reveals Nme6 and Nme7 are Crucial for Embryonic Stem Cell Renewal. Stem Cells 30:2199-2211 (2012)
+Hs Pluripotency Labome
+Literature review to find known human pluripotency stem cell markers
+human pluripotent stem cells: ESCs, iPSCs, germ stem cells, ectoderm and endoderm stem cells
+
+53
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs HSC Labome
+Literature review to find known human hematopoietic stem cell markers
+human hematopoietic stem cells
+
+13
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs CSC Labome
+Literature review to find known human cancer stem cell markers
+human cancer stem cells
+
+14
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs CardiacSC Labome
+Literature review to find known human cardiac stem cell markers
+human cardiac stem cells
+
+21
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs OP Labome
+Literature review to find known human osteoprogenitor cell markers
+human osteoprogenitor cells
+
+23
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs MP Labome
+Literature review to find known human myogenic precursor cell markers
+human myogenic precursor cells
+
+8
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs NSC Labome
+Literature review to find known human neuronal stem cell markers
+human neuronal stem cells
+
+11
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs MSC Labome
+Literature review to find known human mesenchymal stem cell markers
+human mesenchymal stem cells
+
+13
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs SSC Labome
+Literature review to find known human skin stem cell markers
+human skin stem cells
+
+11
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs ASC Labome
+Literature review to find known human adipose-derived stem cell markers
+human adipose-derived stem cells
+
+3
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Hs ISC Labome
+Literature review to find known human intestinal stem cell markers
+human intestinal stem cells
+
+5
+
+Pazhanisamy, S. Adult Stem Cell and Embryonic Stem Cell Markers. Materials Methods 3:200 (2013)
+Signaling pathways regulating pluripotency of stem cells
+Data set was generated using REACTO ME database from the "Signaling  pathways regulating pluripotency of stem cells" (map04550) pathway. There are 40 molecules listed in this pathway, key components in clude POU5F1 (OCT4), SOX2 and NANOG . The three transcription factors and their downstream target genes co-ordinately promote self-renewal and pluripotency. Cellular com partments of this pathway are cytosol (GO:0005829 and nucleoplasm (GO:0005654) and the major biological process controlled by this pathway is somatic stem cell maintenance (GO:0035019). 
+
+
+136
+16153702,16518401,17211451,17647265,18220859,18295576,18414030,19427042,19551525,19571885,20705693,22298652,22649650,23370346,23585347,23653415,24147644,24315442,24910449,24957798
+KEGG pathways 
+Transcriptional regulation of pluripotent stem cells (REACT_200812)
+Description: Data set was generated using REACTOME database from the "Transcriptional regulation of pluripotent stem cells" pathway which is listed under developmental biology. There are 40 molecules listed in this pathway, key components include POU5F1 (OCT4), SOX2 and NANOG . Cellular compartments of this pathway are cytosol (GO:0005829 and nucleoplasm (GO:0005654) and the major biological process controlled by this pathway is somatic stem cell maintenance (GO:0035019). 
+
+
+28
+24243840 
+<Reactome database;http://www.reactome.org/PathwayBrowser/#DIAGRAM=452723&PATH=1266738
+Mm_Plurinetwork_Som_2010
+The PluriNetWork is a manually curated protein/gene interaction and regulation network with the purpose of describing pluripotency in mouse. This dataset contais all the genes present in  Plurinetwork.
+mESCs;  The network is based upon 177 publications, consists of 274 nodes (genes/proteins) and 574 edges (links) - each representing a direct interaction or regulation between two nodes.
+
+274
+21179244
+Som A et al. The PluriNetWork: an electronic representation of the network underlying pluripotency in mouse, and its applications. PLoS One. 2010 Dec 10;5(12):e15165.
+Protein-protein network shared by the pluripotent cells
+Genes constituting the pluripotency-associated network (PluriNet) protein-protein network shared by the pluripotent cells (embryonic stem cells, embryonical carcinomas and induced pluripotent cells). Comparing public data shows that PluriNet to be a common characteristic of pluripotent cells, including mouse ES and iPS cells and human oocytes. This data set is obtained by combining gene expression data with physical interactions (protein-protein interactions)in a physical interaction network that show a significant co-expression pattern.
+Embryonic stem cells, Germ cell tumor stem cells, iPSC, stems cells from brain, bone marrow, umbilical cord, connective tissue, un differentiated cells, cells from different lineages such as neural, astrocytic, fibroblasts, mesenchymal, endodermal, embroid and endothelial. 
+Gene expression studies are performed using Illumina WG8 and WG6 Sentrix Bead Chips 
+299
+18724358
+Muller FJ et al, 2008, Nature. Regulatory networks define phenotypic classes of human stem cell lines
+Stem cell GeneCards. Stem cell related genes in GeneCards database.
+Data set was generated using GeneCards database that is searched for "Stem cell" as keyword in the function section using advanced search option. This resulted in a total of 139 unique genes that are used to build this data set.
+
+
+133
+20689021
+<GeneCards;http://www.genecards.org/

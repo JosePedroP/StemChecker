@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<script src="Chart.js" type="text/javascript"/>
+	<script src="sorttable.js" type="text/javascript"/>
+	<script src="stemchecker.js" type="text/javascript"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+	
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="main">
+	
+		<h1>Group</h1>
+	
+		<p>Stemchecker was developed by the <a href="http://sysbiolab.eu/">Systems Biology and Bioinformatics Laboratory</a> at  
+		<a href="https://www.ualg.pt/home/en">the University of Algarve</a>.</p>
+		
+		<h2>Group Leader</h2>
+		
+		<p><a href="http://w3.ualg.pt/~mfutschik/matthias.html">Matthias Futschik</a></p>
+		
+		<h2>Software Development</h2>
+		
+		<p><a href="http://w3.ualg.pt/~mfutschik/jose.html">José Pedro Pinto</a></p>
+		
+		<h2>Data Curation</h2>
+		
+		<p><a href="http://w3.ualg.pt/~mfutschik/ravi.html">Ravi Kalathur</a></p>
+		<p><a href="http://w3.ualg.pt/~mfutschik/daniel.html">Daniel Oliveira</a></p>
+		<p><a href="http://w3.ualg.pt/~mfutschik/isabel/iduarte.html">Isabel Duarte</a></p>
+		<p><a href="http://w3.ualg.pt/~mfutschik/rui.html">Rui Machado</a></p>
+		<p><a href="http://w3.ualg.pt/~mfutschik/tania.html">Tânia Barata</a></p>
+		<p><a href="http://w3.ualg.pt/~mfutschik/ivette.html">Ivette Leyva</a></p>
+		<p><a href="http://w3.ualg.pt/~mfutschik/susana.html">Susana Machado</a></p>
+		
+		<div style="display:none" >	
+			<p:fileUpload id="upload" />
+		</div>
+		
+	</div>
+	
+	
+	<ui:include src="header2.xhtml"/>
+
+</h:form>
+</h:body></html>

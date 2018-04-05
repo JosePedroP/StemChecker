@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<h:inputHidden value="#{stemBrowser.setId}" id="hiddenPos"/>
+	
+	<ui:repeat var="dat" value="#{overlapBrowser.data}">
+	
+		<ui:fragment>
+		
+			
+			
+			<h:outputLink target="_blank" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{dat[1]}" style="color:blue">#{dat[0]}</h:outputLink>
+			
+			<br/>
+		
+		</ui:fragment>
+	
+	</ui:repeat>
+	
+	<ui:include src="header2.xhtml"/>
+</h:form>
+</h:body></html>

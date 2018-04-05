@@ -1,0 +1,11 @@
+3866	K15
+947	CD34
+10763	Nestin
+10468	Follistatin
+8626	p63
+3655	Integrinalpha6
+3371	TenascinC
+1956	EGFR
+3480	IGFR
+28514	Delta1
+7048	TBRII

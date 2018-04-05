@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<script src="Chart.js" type="text/javascript"/>
+	<script src="sorttable.js" type="text/javascript"/>
+	<script src="stemchecker.js" type="text/javascript"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+	
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="main">
+	
+		<h1>Tutorial</h1>
+		<p>The main features of StemChecker will be demonstrated and explained by using the following list of genes as input: 
+		BUB1B, ABCB7, MSH6, SMARCAD1, PPP2R1B, TEAD2, NANOG, POU5F1, SOX2, ORC1, PTPN2, SET, GFER, CITED2 and CCBE1 – 
+		this gene list is shown in the text input field of the Analysis page, when you press the example button.</p>
+		<br></br>
+		
+		<h1>Starting the Stemness Analysis</h1>
+		
+		<p>On the Analysis page, the user can input a list of genes in the text field. The current version of StemChecker 
+		accepts official Gene Symbols and <a href="http://www.ncbi.nlm.nih.gov/gene/">Entrez</a> Gene IDs, separated either 
+		by empty spaces, commas or enter (new line). Alternatively, the user can upload his gene list as a text file (.txt).</p>
+		<br></br>
+		<p align="center"><img src="./images/F1.png" height="70%" width="70%"/></p>
+		<p style="font-size:80%;padding-left:5%;padding-right:5%" align="center"><strong>Input page</strong> of StemChecker with 
+		options for selection of <i>stemness signatures</i> and for the presentation of output checkerboards</p>
+		<br></br>
+		
+		<p>Before the analysis, the user can select which <i>stemness signatures</i> should be searched. The different <i>stemness 
+		signatures</i> are grouped according to their source, i.e.<i>TF target genes</i>, <i>Expression profiles</i>, <i>RNAi 
+		screens</i>, <i>Literature curation</i> or <i>Computationally derived</i>. The individual <i>stemness signatures</i> are displayed 
+		after expanding the corresponding menu items located to the right of the input field. By default, signatures are selected accordingly 
+		to the choosen organism.</p>
+		
+		<p>Furthermore, it is possible to control how the genes and <i>stemness signatures</i> are ordered in the generated checkerboards:</p>
+		
+		<ul>
+			<li>By selecting <strong>Order genes (Rows)</strong>, the genes  will be ordered according to the number of occurrences in <i>stemness 
+			signatures</i>. Thus, genes with more matches will be displayed on top.</li>
+			<li>By selecting <strong>Order sets (Columns)</strong>, the <i>stemness signatures</i>/TF target gene sets (columns) with more genes 
+			matched to the queried genes will be located to the left.</li>
+			<li>By selecting <strong>Order by species (Rows)</strong>, the genes will be ordered by species. Please note, that this feature can only
+			be used when both organisms are selected. Furthermore, when this option is selected it can only be used in conjugation with the 
+			Order sets (Columns) option.</li>
+		</ul>
+		
+		<p>Finally masking options can be set to exclude inputed gens associated with either cell proliferation and/or cell cycle. It should be 
+		noted that these options only mask inputed genes, genes present in the database but not in the input are nor masked.</p>
+		
+		<p>By default, the checkerboard options are order by genes and sets, the organism selected is <i>Homo Sapiens</i> and no 
+		masking options are selected.</p>
+		
+		<p>Pressing the <i>Submit</i> button will execute the search for the input genes in the selected <i>stemness 
+		signatures</i> and calculates its statistical significance using the Hypergeometric test.</p>
+		
+		<h1>How to interpret the results</h1>		
+		
+		<p>The results of the stemness analysis are displayed on three pages, each on an individual tab: <i>Overview/Stats</i>, 
+		<i>Stemness match</i> and <i>TF match</i>, which can be accessed by clicking on the corresponding tab. Whereas the first 
+		page displays the results for the input gene list as a whole, the results for individual input genes are displayed on the 
+		other two tabs.</p>
+		
+		
+		
+		<h2>Overview/Stats</h2>
+		
+		<p>On the <i>Overview/Stats</i> page, you will obtain the summary, which contains a small description of how many input genes
+		where found in the database, how many input genes where not found on the database and how many stemness signatures and TF target genes datasets were
+		analized. There is also three different tabs that contain the results for the overlap and its significance between the input gene list and the 
+		<i>stemness signatures</i>.</p>
+		
+		<br></br>
+		<p align="center"><img src="./images/F2.png" height="25%" width="25%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>Summary.</strong> Brief description of the input gene list.</p>
+		<br></br>
+		
+		<p>In the <i>Stem Cell types</i> (first tab) it is displayed the significance of the overlap, which is represented by the -log10 of the hypergeometric test 
+		pvalue and, if you press the <i>switch</i> button, you will obtain the overlap percentage of the queried genes with the different 
+		<i>Stem Cell types</i> datasets. Values can range from 0 to infinite for the -log10 of the hypergeometric test pvalue 
+		and from 0 to 100% on the overlap of the input gene list with the dataset. The exact values/percentages are shown when the pointer is moved over the 
+		generated star. The radar chart visualizes not only the overlap, but it also indicates whether the input genes show 
+		any tendency toward particular <i>Stem Cell types</i>.In the example it is possible to observe that the majority of the queried genes 
+		are expressed in embryonic stem cells and embryonal carcinoma, giving a clear indication that these genes contribute to the stemness state.</p>
+		
+		<br></br>
+		<p align="center"><img src="./images/F3.png" width="70%" height="70%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>Stem Cell Types.</strong> This radar chart
+		shows the significance and percentage overlap of the input gene list with the Stem Cell types datasets.</p>
+		<br></br>
+		
+		<p>In the <i>Stemness Signatures</i> (second tab) it is displayed the overlap significance of the input gene list with the selected 
+		<i>stemness signatures</i> and the overlap percentage with the dataset (merged according to the source/method of generation). 
+		Thus, the five spokes refer to the merged <i>stemness signatures</i> for transcription factor (TF) target genes, expression profiles, 
+		RNAi screens, literature curation and computational methods.  In the example, we see that the majority of the input 
+		genes occur in signatures based on expression profiles or TF Target Genes, while considerably less can be found as 
+		hits of RNAi screens. The table below the radar chart lists the overlap 
+		between the input genes and the selected <i>stemness signatures</i> and its statistical significance. For each signature, 
+		it shows the set size (number of genes), the size of the overlap (number of genes that are common with the input genes) 
+		and the corresponding pvalue for over-representation (calculated by the Hypergeometric-test).Since we are performing multiple test
+		to the same database, we present the adjusted pvalue, calculated by the <a href="http://en.wikipedia.org/wiki/Bonferroni_correction"> 
+		Bonferroni correction</a>.</p>
+		
+		<br></br>
+		<p align="center"><img src="./images/F4.png" width="60%" height="60%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong><i>Stemness Signatures</i>.</strong> 
+		This radar chart shows the significance and percentage overlap of the input gene list with the <i>Stemness Signatures</i> datasets.
+		The table displays the data set name, the size of each data set (total number of genes included in each data set), the number 
+		of common genes (i.e. the number of matches between the queried genes and those of the <i>Stemness Signatures</i>, the hypergeometric test
+		pvalue and Bonferroni correction for the ajusted pvalue.</p>
+		<br></br>
+		
+		<p>In the <i>Transcription Factors</i> (third tab) it is displayed the overlap significance and the overlap percentage of the input gene
+		lists with the sets of TF target genes determined by ChIP-chip and ChIP-Seq studies. Each spoke represents the merged set of target genes 
+		for a specific TF. For the example gene set, the radar chart shows that a high percentage of the input genes are known targets of the 
+		pluripotency master regulators (NANOG, SOX2, OCT4). The provided table has the same type of information, as described previously, 
+		but regarding the overlap between the input genes and the sets of TF target genes </p>
+		
+		<br></br>
+		<p align="center"><img src="./images/F5.png" width="50%" height="50%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>Transcription Factors.</strong> This radar chart
+		shows the significance and percentage overlap of the input gene list with the Transcription Factors datasets.
+		The table displays the data set name, the size of each data set (total number of genes included in each data set), the number 
+		of common genes (i.e. the number of matches between the queried genes and those of the Transcripton Factors, the hypergeometric test
+		pvalue and Bonferroni correction for the ajusted pvalue.</p>
+		<br></br>
+	
+		<p>It is possible to download all radar charts as png files (with transparent background) and its corresponding tables which contain the
+		genes that are overlapping with each dataset as a text file (.txt). Furthermore, it is possible to download the tables that contain the 
+		statistical significance of the overlap between the input genes and <i>Stemness Signatures</i> / <i>Transcription Factors</i>. 
+		Please note that this feature may not work properly for some older browser versions.</p>
+		
+
+
+		
+		
+		
+		
+		<h2>Stemness Match</h2>
+		
+		<p>On the <i>Stemness Match</i> page a checkerboard-like table is displayed. This checkerboard includes the input genes and the selected 
+		<i>stemness signatures</i> datasets that had at least one hit overlap between them. Blue rectangles indicate the occurrence of 
+		an input gene in the corresponding <i>stemness signature</i>. 
+		If chosen on the <i>Input page</i>, genes (rows) are ordered from top to bottom by number of times each gene is found in the selected 
+		<i>stemness signature</i>; and the signatures (columns) are ordered from left to right by the number of input genes found in that 
+		signature. The <i>stemness signatures</i> are color-coded by the type of data (namelly <i>TF target genes</i>, <i>Expression profiles</i>, 
+		<i>RNAi screens</i>, <i>Literature curation</i>, <i>Computationally derived</i>).
+ 		Note that both genes and signatures can be hidden from display by clicking on the cross next to it. This feature is particularly useful if 
+		one wants to hide from display genes or signatures for which no matches have been found. (Please note that such change, 
+		however, will not update the statistical analysis presented in the <i>Overview/Stats</i> page).The checkerboard table can be downloaded 
+		as a PDF file.</p>
+		
+		<br></br>
+		<p align="center"><img src="./images/F6.png" width="30%" height="30%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>Stemness Match page.</strong> The checkerboard table 
+		shows the occurrence of each individual gene in the selected <i>stemness signatures</i>. For each gene, the Entrez Gene ID is shown in brackets. 
+		Clicking on the cross to the left of a gene, or below a <i>stemness signature</i>, will hide the respective gene or signature. Colors 
+		below the labels of the <i>stemness signatures</i> indicate the type of data source/acquisition.</p>
+		<br></br>
+		
+		<div style="display:none" >	
+			<p:fileUpload id="upload" />
+		</div>
+		
+		<h2>TF Match</h2>
+		
+		
+		<p>For the <i>TF Match</i> page, the input genes are matched with potential target genes of Transcription Factors (TFs) identified by 
+		ChIP-Chip and ChIP-Seq analyses in stem cells. Also here, the results are displayed via a checkerboard-like table. Similarly to the 
+		<i>Stemness Match</i> page, input genes and TF target gene sets are ordered by default, and can be removed from display by clicking on 
+		the corresponding crosses on the checkerboard. This checkerboard table can also be downloaded as a PDF.</p>
+		
+		
+		<br></br>
+		<p align="center"><img src="./images/F7.png" width="25%" height="25%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>TF Match page.</strong> The checkerboard table displays 
+		the matches between the input genes with the target gene sets of Transcription Factors (TF) related to stemness. The input genes (rows) 
+		and the TF gene sets (columns) are ordered by default and can also be removed. Colors indicate specific TFs.</p>
+		<br></br>
+		
+		<h1>How to get more information about the curated <i>stemness signatures</i> and TF target gene sets</h1>
+		
+		<p>To obtain more information about the gene sets included in StemChecker, the <i>Browse dataset</i> tab provides
+		 a list of all curated <i>stemness signatures</i> and TF target gene sets. The sunburst chart demonstrates in a 
+		synthetic and intuitive way the composition of the gene sets that are present in Stemchecker. The inner circle 
+		represents the 2 different major sets (<i>Stemness signatures</i> and TF gene sets). The intermediate and outer circles 
+		represent the subsets/datasets present in these 2 major classes. Mouse over the different layers of the circle to 
+		scan for the gene sets included in StemChecker.</p>
+		
+		
+		<br></br>
+		<p align="center"><img src="./images/F8.png" width="40%" height="40%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>Sunburst chart.</strong> This chart represents in a 
+		visual manner all the datasets present in StemChecker.</p>
+		<br></br>
+		
+		<p>By click on the <i>Table</i> button next to the sunburst chart, one will obtain detailed information about the curated <i>stemness signatures</i>
+ 		and TF target gene sets. By clicking on any signature/gene set, a comprehensive table with information about that particular gene set will be provided, 
+ 		including a brief description, number of included genes, PubMed ID and data source. Below the table, the included genes are listed (by expanding the 
+		<i>Genes</i> tab) with links to their corresponding Gene page in NCBI.</p>
+		
+		
+		<br></br>
+		<p align="center"><img src="./images/F9.png" width="60%" height="60%"/></p>
+		<p align="center" style="font-size:80%;padding-left:5%;padding-right:5%"><strong>Browse Sets tab</strong> provides a listing of the 
+		<i>stemness signatures</i> and TF target gene sets curated in StemChecker (on the left). Clicking on a signature/gene set leads to the generation 
+		of a table with detailed information. Also, the genes included in the data sets can be listed.</p>
+		<br></br>
+		
+		
+		<h1>How to make a new query</h1>
+		
+		<p>A button labelled <i>New Query</i> at the bottom of the output pages will lead you back to the Input page, where a new query 
+		can be performed :)</p>
+		
+		
+		<h1>How can I report bugs and/or make suggestions?</h1>
+		
+		<p>If you find a bug in our tool please contact us to the following e-mail address: <a href="mailto:jppinto@ualg.pt">jppinto at ualg dot pt</a></p>
+		
+		<p>Additionally, we would be happy to hear your opinions, suggestions and comments about this resource. Please feel free to contact us at: 
+		<a href="mailto:jppinto@ualg.pt">jppinto at ualg dot pt</a></p>
+		
+		<p>Thank you :)!</p>
+	</div>
+	
+	<ui:include src="header2.xhtml"/>
+</h:form>
+</h:body></html>

@@ -1,0 +1,195 @@
+Stemness signatures-TF Target Genes-Hs_ESC_NANOG_targets_Boyer,1
+Stemness signatures-TF Target Genes-Hs_ESC_OCT4_targets_Boyer,1
+Stemness signatures-TF Target Genes-Hs_ESC_SOX2_targets_Boyer,1
+Stemness signatures-TF Target Genes-Mm_HSC_Runx1_Wu,1
+Stemness signatures-TF Target Genes-Mm_HSC_Tcf7_Wu,1
+
+Stemness signatures-Expression Profiles-Hs_EC_Skotheim,1
+Stemness signatures-Expression Profiles-Hs_ESC/EC_Sperger,1
+Stemness signatures-Expression Profiles-Hs_ESC_Assou,1
+Stemness signatures-Expression Profiles-Hs_ESC_Bhattacharya,1
+Stemness signatures-Expression Profiles-Hs_ESC_Sato,1
+Stemness signatures-Expression Profiles-Hs_ESC_Skottman,1
+Stemness signatures-Expression Profiles-Hs_HSC/MSC/NSC/ESC_Huang,1
+Stemness signatures-Expression Profiles-Hs_HSC/MSC/NSC_Huang,1
+Stemness signatures-Expression Profiles-Hs_HSC_Huang,1
+Stemness signatures-Expression Profiles-Hs_HSC_Novershtern,1
+Stemness signatures-Expression Profiles-Hs_HSC_Toren,1
+Stemness signatures-Expression Profiles-Hs_MSC_Huang,1
+Stemness signatures-Expression Profiles-Hs_MaSC_Pece,1
+Stemness signatures-Expression Profiles-Hs_NSC_Huang,1
+Stemness signatures-Expression Profiles-Hs_SC_Palmer,1
+Stemness signatures-Expression Profiles-Hs_SC_Shats,1
+Stemness signatures-Expression Profiles-Hs_iPSC_Shats,1
+Stemness signatures-Expression Profiles-Hs_ESC_Wong,1
+Stemness signatures-Expression Profiles-Mm_ESC_Fortunel,1
+Stemness signatures-Expression Profiles-Mm_ESC_Gaspar,1
+Stemness signatures-Expression Profiles-Mm_ESC_Glover,1
+Stemness signatures-Expression Profiles-Mm_ESC_Ivanova,1
+Stemness signatures-Expression Profiles-Mm_ESC_Ramalho,1
+Stemness signatures-Expression Profiles-Mm_HSC_Ivanova,1
+Stemness signatures-Expression Profiles-Mm_HSC_Ramalho,1
+Stemness signatures-Expression Profiles-Mm_NSC_D'Amour,1
+Stemness signatures-Expression Profiles-Mm_NSC_Fortunel,1
+Stemness signatures-Expression Profiles-Mm_NSC_Ivanova,1
+Stemness signatures-Expression Profiles-Mm_NSC_Parker,1
+Stemness signatures-Expression Profiles-Mm_NSC_Ramalho,1
+Stemness signatures-Expression Profiles-Mm_SC_Wong,1
+Stemness signatures-Expression Profiles-Mm_SSC_Kokkinaki,1
+Stemness signatures-Expression Profiles-Mm_ISC_Munoz,1
+Stemness signatures-Expression Profiles-Mm_DSC_Noh,1
+Stemness signatures-Expression Profiles-Mm_RPC_Fortunel,1
+
+
+Stemness signatures-RNAi Screens-Hs_ESC_Chia,1
+Stemness signatures-RNAi Screens-Mm_ESC_Ding,1
+Stemness signatures-RNAi Screens-Mm_ESC_Hu,1
+Stemness signatures-RNAi Screens-Mm_ESC_Wang,1
+Stemness signatures-RNAi Screens-Mm_ESC_Yang,1
+
+
+Stemness signatures-Literature Curation-KEGG,1
+Stemness signatures-Literature Curation-REACTOME,1
+Stemness signatures-Literature Curation-PluriNetWork,1 
+Stemness signatures-Literature Curation-HSC Explorer,1
+
+
+Stemness signatures-Computationally Derived-GeneCards,1
+Stemness signatures-Computationally Derived-Plurinet,1
+
+
+TF Gene Sets-Nanog-Hs_Nanog_Boyer1,1
+TF Gene Sets-Nanog-Mm_Nanog_Chen,1
+TF Gene Sets-Nanog-Mm_Nanog_Cole,1
+TF Gene Sets-Nanog-Mm_Nanog_Kim1,1
+TF Gene Sets-Nanog-Mm_Nanog_Loh,1
+TF Gene Sets-Nanog-Mm_Nanog_Marson,1
+TF Gene Sets-Nanog-Mm_Nanog_Mathur,1
+
+
+TF Gene Sets-Sox2-Hs_SOX2_Boyer1,1
+TF Gene Sets-Sox2-Mm_Sox2_Chen,1
+TF Gene Sets-Sox2-Mm_Sox2_Kim1,1
+TF Gene Sets-Sox2-Mm_Sox2_Liu,1
+TF Gene Sets-Sox2-Mm_Sox2_Marson,1
+TF Gene Sets-Sox2-Mm_Sox2_Lodato1,1
+TF Gene Sets-Sox2-Mm_Sox2_Lodato,1
+
+
+TF Gene Sets-Oct4-Hs_OCT4_Boyer1,1
+TF Gene Sets-Oct4-Mm_Oct4_Chen,1
+TF Gene Sets-Oct4-Mm_Oct4_Cole,1
+TF Gene Sets-Oct4-Mm_Oct4_Kim1,1
+TF Gene Sets-Oct4-Mm_Oct4_Loh,1
+TF Gene Sets-Oct4-Mm_Oct4_Marson,1
+TF Gene Sets-Oct4-Mm_Oct4_Mathur,1
+
+
+TF Gene Sets-Ctcf-Mm_Ctcf_Chen,1 
+
+TF Gene Sets-E2f1-Mm_E2f1_Chen,1
+
+TF Gene Sets-Esrrb-Mm_Esrrb_Chen,1 
+
+TF Gene Sets-Klf4-Mm_Klf4_Chen,1
+TF Gene Sets-Klf4-Mm_Klf4_Kim1,1
+TF Gene Sets-Klf4-Mm_Klf4_Liu,1
+
+TF Gene Sets-Mycn-Mm_Mycn_Chen,1
+
+TF Gene Sets-Smad1-Mm_Smad1_Fei,1
+TF Gene Sets-Smad1-Mm_Smad1_Chen,1
+
+TF Gene Sets-Stat3-Mm_Stat3_Chen,1
+TF Gene Sets-Stat3-Mm_Stat3_Kidder,1 
+
+
+TF Gene Sets-Suz12-Hs_SUZ12_Lee,1
+TF Gene Sets-Suz12-Mm_Suz12_Boyer2,1
+TF Gene Sets-Suz12-Mm_Suz12_Chen,1
+TF Gene Sets-Suz12-Mm_Suz12_Ku,1
+TF Gene Sets-Suz12-Mm_Suz12_Marson,1
+
+
+TF Gene Sets-Tcfcp21-Mm_Tcfcp2l1_Chen,1
+
+TF Gene Sets-Zfx-Mm_Zfx_Chen,1
+
+TF Gene Sets-Myc-Mm_Myc_Chen,1
+TF Gene Sets-Myc-Mm_Myc_Kidder,1
+TF Gene Sets-Myc-Mm_Myc_Kim1,1
+TF Gene Sets-Myc-Mm_Myc_Kim2,1
+TF Gene Sets-Myc-Mm_Myc_Liu,1
+
+
+TF Gene Sets-DMAP1-Mm_DMAP1_Kim2,1
+
+
+TF Gene Sets-E2f4-Hs_E2F4_Boyer1,1
+TF Gene Sets-E2f4-Mm_E2f4_Kim2,1
+
+TF Gene Sets-GCN5-Mm_GCN5_Kim2,1
+
+TF Gene Sets-MAX-Mm_MAX_Kim2,1
+
+TF Gene Sets-TIP60-Mm_TIP60_Kim2,1
+
+TF Gene Sets-Tcf3-Mm_Tcf3_Cole,1
+TF Gene Sets-Tcf3-Mm_Tcf3_Marson,1
+TF Gene Sets-Tcf3-Mm_Tcf3_Tam,1
+
+TF Gene Sets-Nacc1-Mm_Nacc1_Kim1,1
+
+TF Gene Sets-Nr0b1-Mm_Nr0b1_Kim1,1
+
+TF Gene Sets-Zfp281-Mm_Zfp281_Kim1,1
+
+TF Gene Sets-Zfp42-Mm_Zfp42_Kim1,1
+
+TF Gene Sets-Eed-Mm_Eed_Boyer2,1
+
+TF Gene Sets-Phc1-Mm_Phc1_Boyer2,1
+
+TF Gene Sets-Rnf2-Mm_Rnf2_Boyer2,1
+
+TF Gene Sets-Tbx3-Mm_Tbx3_Han,1
+
+TF Gene Sets-Smad4-Hs_Smad4_Kim,1
+TF Gene Sets-Smad4-Mm_Smad4_Fei,1
+
+TF Gene Sets-Smad5-Mm_Smad5_Fei,1
+
+TF Gene Sets-Smad2-Hs_Smad2_Kim,1
+TF Gene Sets-Smad2-Hs_Smad2_Brown,1
+
+TF Gene Sets-Smad3-Hs_Smad3_Kim,1
+TF Gene Sets-Smad3-Hs_Smad3_Brown,1
+
+TF Gene Sets-Ring1B-Mm_Ring1B_Ku,1
+TF Gene Sets-Ezh2-Mm_Ezh2_Ku,1
+
+
+TF Gene Sets-Fli1-Mm_Fli1_Wilson,1
+
+TF Gene Sets-Gata2-Mm_Gata2_Wilson,1
+
+TF Gene Sets-Gfi1b-Mm_Gfi1b_Wilson,1
+
+TF Gene Sets-Lmo2-Mm_Lmo2_Wilson,1
+
+TF Gene Sets-Lyl1-Mm_Lyl1_Wilson,1
+
+TF Gene Sets-Meis1-Mm_Meis1_Wilson,1
+
+TF Gene Sets-Pu1-Mm_Pu1_Wilson,1
+
+TF Gene Sets-Scl-Mm_Scl_Wilson,1
+
+TF Gene Sets-Runx1-Mm_Runx1_Wilson,1
+TF Gene Sets-Runx1-Mm_Runx1_Wu,1
+
+TF Gene Sets-Tcf7-Mm_Tcf7_Wu,1
+
+
+TF Gene Sets-Brn2-Mm_Brn2_Lodato1,1
+TF Gene Sets-Erg-Mm_Erg_Wilson,1

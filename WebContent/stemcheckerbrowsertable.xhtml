@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="main">
+	
+	
+	
+		<br/>
+		<h1>Stemness Signatures</h1>
+		<ui:repeat var="setd" value="#{stemChecker.setData[0]}">
+		
+			<ui:fragment>
+			 
+				<p:outputPanel rendered = "#{setd[1] == 'ref' ? 'true': 'false'}">
+					<h2>#{setd[0]}</h2>
+				</p:outputPanel>
+			
+				<h:outputLink value="stemsetdata.jsf?p=s#{setd[1]}" target="new" style="padding-left:1%;padding-right:6%" rendered = "#{setd[1] == 'ref' ? 'false': 'true'}">
+					#{setd[0]}
+					<br/>
+				</h:outputLink>
+			
+			</ui:fragment>
+		</ui:repeat>
+								
+	
+	
+		
+		<br/>
+		<br/>
+	
+		<h1>TF Gene Sets</h1>
+		<ui:repeat var="setd" value="#{stemChecker.setData[1]}">
+		
+			<ui:fragment>
+			 
+				<p:outputPanel rendered = "#{setd[1] == 'ref' ? 'true': 'false'}">
+					<h2>#{setd[0]}</h2>
+				</p:outputPanel>
+			
+				<h:outputLink value="stemsetdata.jsf?p=t#{setd[1]}" target="new" style="padding-left:1%;padding-right:6%" rendered = "#{setd[1] == 'ref' ? 'false': 'true'}">
+					#{setd[0]}
+					<br/>
+				</h:outputLink>
+			
+			
+			</ui:fragment>
+		</ui:repeat>
+	
+	
+		<div style="display:none" >	
+			<p:fileUpload id="upload" />
+		</div>
+	</div>
+	<ui:include src="header2.xhtml"/>
+</h:form>
+</h:body></html>

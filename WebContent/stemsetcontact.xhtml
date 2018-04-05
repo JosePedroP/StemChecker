@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<script src="Chart.js" type="text/javascript"/>
+	<script src="sorttable.js" type="text/javascript"/>
+	<script src="stemchecker.js" type="text/javascript"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+	
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="main">
+		
+		<p><a href="mailto:jppinto@ualg.pt">José Pedro Pinto</a></p>
+		<p><a href="mailto:mfutschik@ualg.pt">Matthias E. Futschik</a></p>
+		
+		
+		<p><a href="http://cbmr.ualg.pt/">Center for Biomedical Research (CBMR)</a></p>
+		<p><a href="http://www.ccmar.ualg.pt/">Centre of Marine Sciences (CCMAR)</a></p>
+		
+		<p>Faculty of Sciences and Technology (building 8, room 3.12), Campus de Gambelas</p>
+
+		<p><a href="https://www.ualg.pt/home/en">University of Algarve</a></p>
+
+		<p>8005-139 Faro, Portugal</p>
+
+		<p>Phone: + 351 289 244 403 (extn. 7403)</p>
+		<p>Fax: +351 289 818 419</p>
+		
+		<div style="display:none" >	
+			<p:fileUpload id="upload" />
+		</div>
+		
+	</div>
+	
+	
+	<ui:include src="header2.xhtml"/>
+
+</h:form>
+</h:body></html>

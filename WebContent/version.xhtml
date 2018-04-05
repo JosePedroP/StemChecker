@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemCellNet</title>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	
+</h:head>
+<h:body>
+
+	<f:view>
+	<h:form id="form">
+		<ui:include src="header.xhtml"/>
+		<!-- include goes here -->
+		
+	<div style="margin-left:50px;margin-right:50px">
+		<hr noshade="noshade" size="3"/>
+	</div>
+	<br/>
+	
+	
+	<h1 class="subtitle">1.2.1 - 10/10/2015</h1>
+	<p class="text">The new stemness signature, <a href="http://193.136.227.168:8282/stemchecker/stemsetdata.jsf?p=s65">Mm_RPC_Fortunel</a>, has been added.</p>
+	<br/>
+	
+	<h1 class="subtitle">1.2 - 09/29/2015</h1>
+	<p class="text">Masking options where added.</p>
+	<br/>
+	
+	<h1 class="subtitle">1.1.2 - 09/02/2015</h1>
+	<p class="text">A bug in the calculation of the stem cell types p-values was fixed: Now the set size will be adjusted based in the selected sets instead of considering all genes of the specific type.</p>
+	<p class="text">Removed 725 withdraw or pseudogenes from the database.</p>
+	<p class="text">Updated the entrez gene id and gene symbol of 81 genes.</p>
+	<br/>
+	
+	<h1 class="subtitle">1.1.1 - 07/16/2015</h1>
+	<p class="text">The new stemness signature, <a href="http://193.136.227.168:8282/stemchecker/stemsetdata.jsf?p=s64">Mm_DSC_Noh</a>, has been added.</p>
+	<br/>
+	
+	<h1 class="subtitle">1.1 - 05/07/2015</h1>
+	<p class="text">Links to <a href="http://193.136.227.168:8282/stemcellnet/stemCellNet.jsf">StemCellNet</a> added.</p>
+	<br/>
+	<h1 class="subtitle">1.0 - 05/12/2014</h1>
+	<p class="text">Initial release of StemChecker.</p>
+	<br/>
+	<div style="display:none" >	
+		<p:fileUpload id="upload" />
+	</div>
+	<ui:include src="header2.xhtml"/>
+	
+	</h:form>
+	</f:view>
+
+</h:body></html>

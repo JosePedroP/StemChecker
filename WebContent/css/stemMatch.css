@@ -1,0 +1,70 @@
+#side{
+	position: absolute;
+	width: 10em;
+    height: auto;
+    top: 15%;
+    right: auto;
+    bottom: 100px;
+    left: 0;
+}
+
+#main {
+    position: absolute;
+    width: 10;
+    height: auto;
+    top: 15%;
+    right: 0;
+    bottom: 100px;
+	left: 10em;
+}
+
+.fileupload-buttonbar{
+   background: white !important;
+   border: 0;
+}
+.fileupload-content{
+   background: white !important;
+   border: 0;
+}
+
+table a:link {
+  color: #0000FF;
+  text-decoration: none;
+}
+
+table table a:visited {
+  color: #800080;
+  text-decoration: none;
+}
+
+table table a:active {
+  color: #FF0000;
+  text-decoration: none;
+}
+
+table a:hover {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+/* style="color:blue" */
+
+/* unvisited link */
+/* .FooterTable a:link {
+    color: #FF0000;
+}
+ */
+/* visited link */
+/* .FooterTable a:visited {
+    color: #00FF00;
+}
+ */
+/* mouse over link */
+/* .FooterTable a:hover {
+    color: #FF00FF;
+ */}
+
+/* selected link */
+/* .FooterTable a:active {
+    color: #0000FF;
+ */}

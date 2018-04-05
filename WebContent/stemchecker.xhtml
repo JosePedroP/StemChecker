@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>StemChecker</title>
+	<script src="Chart.js" type="text/javascript"/>
+	<script src="sorttable.js" type="text/javascript"/>
+	<script src="stemchecker.js" type="text/javascript"/>
+	<link href="./css/stemCheckerStyle.css" rel="stylesheet" type="text/css"/>
+	<link href="./css/SearchPageStyle.css" rel="stylesheet" type="text/css"/>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-18078633-13', 'auto');
+  		ga('send', 'pageview');
+	</script> 
+
+</h:head>
+<h:body>
+
+<h:form id="sc">
+	<ui:include src="header.xhtml"/>
+
+	<div id="loading-image" style="position:absolute; border:1px;solid;top:35%;left:25%;display:none"><img src="./images/progress.gif" /></div>
+
+	<div id="main">
+	
+		<p:outputPanel id="display">
+		
+			<p:outputPanel id="input" rendered="#{stemChecker.input}">
+			
+				<div id="part1">
+					<h3>Input</h3>
+					<br/>
+					<h:inputTextarea id="searchText" value="#{stemChecker.searchData}" onkeyup="disalbeIfEmpty()" onchange="disalbeIfEmpty()" class="inte" title="The input genes will be matched to stemness signatures and TF target genes upon pressing of 'Submit' button below. Gene symbols or Entrez Gene IDs separated by space or comma can be used as input."/>
+ 					<br/>
+ 					<input type="button" value="Upload From File" onclick="document.getElementById('sc:upload_input').click();" title="Upload a list of gene ids to use as input search"/>
+ 					&nbsp;
+    				<input type="button" value="Example" onclick="exampleGet();enableIt();"/>
+    				&nbsp;
+    				<input type="button" value="Clear" onclick="document.getElementById('sc:searchText').value = '';disalbeIfEmpty();"/>
+    				<br/>
+    				<input type="button" disabled="true" id="sna" value="Submit" onclick="document.getElementById('sc:search').click();" title="Search for the genes input in the text box on the stemness sets" />
+ 				</div>
+			 
+				<div id="part3">
+					<h3>Checkerboard Options</h3>
+					<h:selectBooleanCheckbox id="ord1" value="#{stemChecker.order1}" checked="checked" title="Places the genes with the greater number of matches in the upper rows"/> Order genes (Rows)
+					<br/>
+					<h:selectBooleanCheckbox id="ord3" onclick="diso1()" value="#{stemChecker.order3}" checked="checked" title="Orders the rows of the checkerboards by species" disabled="true"/> Order by species (Rows)
+					<br/>
+					<h:selectBooleanCheckbox id="ord2" value="#{stemChecker.order2}" checked="checked" title="Places the sets in which the greater number of genes was found in the leftmost columns"/> Order sets (Columns)
+					
+				
+					<h3>Organism</h3>
+					<h:selectOneRadio id="selct" value="#{stemChecker.organism}" layout="pageDirection" onchange="deiso3()">
+   						<f:selectItem itemValue="HS" itemLabel="Homo sapiens (Human)" />
+   						<f:selectItem itemValue="MM" itemLabel="Mus musculus (Mouse)" />
+   						<f:selectItem itemValue="Both" itemLabel="Both (Accepts Entrez Gene Ids only)" />
+					</h:selectOneRadio>
+				
+					<h3>Masking</h3>
+					<h:selectBooleanCheckbox value="#{stemChecker.cellProliferation}" title="Mask inputed genes associated with cell proliferation"/> Mask Cell Proliferation Genes
+					<br/>
+					<h:selectBooleanCheckbox value="#{stemChecker.cellCycle}" title="Mask inputed genes associated with the cell cycle"/> Mask Cell Cycle Genes
+					
+				</div>
+			 
+				<div id="part2">
+					<h3>Selection of Stemness Signatures </h3>
+					<br/>
+					<p:accordionPanel activeIndex="null" value="#{stemChecker.shownames}" var="nam">
+					
+						<p:tab title="#{nam[0][0][0]}">
+						
+							<ui:repeat var="namr" value="#{nam[1]}">
+								
+								<ui:fragment rendered = "#{namr[0] == '!' ? 'true': 'false'}">
+									<input type="checkbox" id="chk#{namr[1]}" checked="checked" onclick="checkClass('chk#{namr[1]}')"><b>Select All</b></input>
+								</ui:fragment>
+								
+								
+								<ui:fragment rendered = "#{namr[0] == '!' or namr[3] == 'h'? 'false': 'true'}">
+								
+										&nbsp;&nbsp;&nbsp;<input type="checkbox" class="#{namr[3]}chk#{namr[1]}" id="i#{namr[2]}" disabled="disabled" onclick="disableAllChecker('#{namr[1]}')">#{namr[0]}</input>
+								
+									
+								</ui:fragment>
+								
+								<ui:fragment rendered = "#{namr[0] == '!' or namr[3] == 'm'? 'false': 'true'}">
+								
+										&nbsp;&nbsp;&nbsp;<input type="checkbox" class="#{namr[3]}chk#{namr[1]}" id="i#{namr[2]}" checked="checked" onclick="disableAllChecker('#{namr[1]}')">#{namr[0]}</input>
+								
+									
+								</ui:fragment>
+								
+								
+								
+								
+								<br/>
+							
+							
+							</ui:repeat>
+							
+							
+						</p:tab>
+					
+					</p:accordionPanel> 
+				
+				</div>
+				
+				
+				
+			</p:outputPanel>
+	
+	
+			<p:outputPanel id="nomatch" rendered="#{stemChecker.nomatch}">
+			
+				<br/>
+				<p>No match to the input genes found.</p>
+				<p>(Have you selected the correct organism for your input genes?)</p>
+				<form>
+					<input type="button" value="New Query" onClick="parent.location='stemchecker.jsf'"/>
+				</form> 
+				
+				
+			</p:outputPanel>
+	
+	
+			<p:outputPanel id="badfile" rendered="#{stemChecker.badfile}">
+			
+				<br/>
+				<p>File not readable, please use an ASCII file with the .txt extension.</p>
+				<form>
+					<input type="button" value="New Query" onClick="parent.location='stemchecker.jsf'"/>
+				</form> 
+				
+			</p:outputPanel>
+	
+	
+	
+			<p:outputPanel id="output" rendered="#{stemChecker.output}">
+			
+				
+			
+			
+				<p:tabView id="daTab">
+					<p:tab title="Overview/Stats">
+					
+						
+						<h3>Summary</h3>
+						
+						<ul>
+						
+							<li><p style="color:DarkBlue">#{stemChecker.numallmatches} input genes found in the database.</p></li>
+							<p:outputPanel rendered="#{stemChecker.noMatches == '' ? 'false': 'true'}">
+								<li><p><span style="color:DarkBlue">#{stemChecker.numNoMatches} input genes NOT found in the database:</span> #{stemChecker.noMatches}.</p></li>
+							</p:outputPanel>
+							<p:outputPanel rendered="#{stemChecker.noMatches == '' ? 'true': 'false'}">
+								<li><p style="color:DarkBlue">0 input genes NOT found in the database.</p></li>
+							</p:outputPanel>
+							<p:outputPanel rendered="#{stemChecker.noSetMatches == '' ? 'false': 'true'}">
+								<li><p><span style="color:DarkBlue">#{stemChecker.numNoSetMatches} genes were found in the database but not in any of the selected sets:</span> #{stemChecker.noSetMatches}.</p></li>
+							</p:outputPanel>
+							
+							<p:outputPanel rendered="#{stemChecker.masked == '' ? 'false': 'true'}">
+								<li><p><span style="color:DarkBlue">#{stemChecker.numMasked} genes were masked:</span> #{stemChecker.masked}.</p></li>
+							</p:outputPanel>
+							
+							<li><p style="color:DarkBlue">#{stemChecker.setNum} stemness signature were analyzed.</p></li>
+							<li><p style="color:DarkBlue">#{stemChecker.tfNum} TF sets were analyzed.</p></li>
+						
+						
+						</ul>
+						
+						
+			
+						
+						
+						<p:tabView id="daTab" onTabShow="loadGraph()">
+						
+						
+						
+						
+							<p:tab title="Stem Cell types">
+								<h3>Overlap Radar Charts</h3>
+						
+								<p>This chart displays the overlap between the input gene list and the Stem Cell types. By default, the overlap significance is plotted (-log10 pvalue), if the switch button is pressed, the fractional overlap is shown (% of overlap).</p>
+								<p style="font-size: 80%;">(Mouse over displays the values)</p>
+								<br/>
+							
+								<div style="width: 60%;margin: 0 auto;">
+									<canvas id="myChart3"></canvas>
+								</div>
+							
+								
+								<input type="button" value="Download png" onclick="downloadgraph3()" title="Download the chart as a png image. Might not work in older browsers."/>
+								<input type="button" value="Download Text" onclick="document.getElementById('sc:gettab3').click();" title="Download an ASCII file with detalied information about this graph"/>
+								<input type="button" value="Switch" onclick="switch3();"/>
+								<br/>
+								
+								<br/>
+								<h3>Statistical details table</h3>
+								<p>The statistical details table displays the significance of enrichment of genes included in composite gene sets for the different stem cell types among the input genes found in StemChecker. The composite gene sets for the different cell types are the unions of all selected stemness signatures of the corresponding cell type.  The significance (pvalue) is  calculated by the <a style="color:blue" target="_blank" href="http://en.wikipedia.org/wiki/Hypergeometric_distribution">hypergeometric test</a>, which assess the enrichment against the full annotated genome of the selected organism (mouse or human). The adjusted pvalue is calculated by <a style="color:blue" target="_blank" href="http://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni correction</a>. Click the overlapping genes number to see the id. Press the headers to order the columns.</p>
+								<br/>
+							
+							
+								<table class="sortable" id="dataT3" border="2">
+									<tr>
+										<th>Cell Type</th>
+										<th>Set Size</th>
+										<th>Overlapping Genes</th>
+										<th>Pvalue</th>
+										<th>Adjusted Pvalue</th>
+									</tr>
+									<ui:repeat var="pv" value="#{stemChecker.pvalue3}">
+										<ui:fragment>
+										
+											<ui:fragment rendered = "#{pv[2] == '0' ? 'false': 'true'}">
+												<tr>
+													<td>#{pv[0]}</td>
+													<td>#{pv[1]}</td>
+													<td>
+														<a onclick="genesPresent('#{pv[5]}')" style="color:blue" href="">#{pv[2]}</a>
+													</td>
+													<td>#{pv[3]}</td>
+													<td>#{pv[4]}</td>
+												</tr>
+											</ui:fragment>
+										
+											
+										</ui:fragment>
+									</ui:repeat>
+								</table>
+								<input type="button" value="Download Table" onclick="document.getElementById('sc:gettab6').click();" title="Download the overlap table as a text file"/>
+							
+							</p:tab>
+						
+						
+							<p:tab title="Stemness Signatures">
+								<h3>Overlap Radar Charts</h3>
+						
+								<p>This chart displays the overlap between the input gene list and the Stemness Signatures. By default, the overlap significance is plotted (-log10 pvalue), if the switch button is pressed, the fractional overlap is shown (% of overlap).</p>
+								<p style="font-size: 80%;">(Mouse over displays the values)</p>
+								<br/>
+								
+								<div style="width: 60%;margin: 0 auto;">
+									<canvas id="myChart"></canvas>
+								</div>
+								<input type="button" value="Download png" onclick="downloadgraph()" title="Download the chart as a png image. Might not work in older browsers."/>
+								<input type="button" value="Download Text" onclick="document.getElementById('sc:gettab1').click();" title="Download an ASCII file with detalied information about this graph"/>
+								<input type="button" value="Switch" onclick="switch1();"/>
+								
+								<br/>
+								<br/>
+								<h3>Statistical details table</h3>
+								<p>The statistical details table displays the significance of enrichment of genes included in selected stemness signatures among the input genes found in StemChecker. Significance (pvalue) calculated by the <a style="color:blue" target="_blank" href="http://en.wikipedia.org/wiki/Hypergeometric_distribution">hypergeometric test</a>, which assess the enrichment against the full annotated genome of the selected organism (mouse or human). The adjusted pvalue is calculated by <a style="color:blue" target="_blank" href="http://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni correction</a>. Click the overlapping genes number to see the id. Mouse over the set name to display the summary of the data set. Press the headers to order the columns.</p>
+								<br/>
+						
+								<table class="sortable" id="dataT2" border="2">
+									<tr>
+										<th>Set Name</th>
+										<th>Set Size</th>
+										<th>Overlapping Genes</th>
+										<th>Pvalue</th>
+										<th>Adjusted Pvalue</th>
+									</tr>
+									<ui:repeat var="pv" value="#{stemChecker.pvalue}">
+										<ui:fragment>
+											<tr>
+												<td>
+													<h:outputLink title="#{pv[7]}" value="stemsetdata.jsf?p=s#{pv[6]}" style="color:blue;text-decoration:none" target="new">#{pv[0]}</h:outputLink>
+												</td>
+												<td>#{pv[1]}</td>
+												<td>
+													<a onclick="genesPresent('#{pv[5]}')" style="color:blue" href="">#{pv[2]}</a>
+												</td>
+												<td sorttable_customkey="#{pv[4]}">#{pv[3]}</td>
+												<td sorttable_customkey="#{pv[4]}">#{pv[8]}</td>
+											</tr>
+										</ui:fragment>
+									</ui:repeat>
+								</table>
+								<input type="button" value="Download Table" onclick="document.getElementById('sc:gettab4').click();" title="Download the overlap table as a text file"/>
+								
+								
+							</p:tab>
+						
+							<p:tab title="Transcription Factors">
+								<h3>Overlap Radar Charts</h3>
+						
+								<p>This chart displays the overlap between the input gene list and the Transcription Factors. By default, the overlap significance is plotted (-log10 pvalue), if the switch button is pressed, the fractional overlap is shown (% of overlap).</p>
+								<p style="font-size: 80%;">(Mouse over displays the values)</p>
+								<br/>
+							
+								<div style="width: 60%;margin: 0 auto;">
+									<canvas id="myChart2"></canvas>
+								</div>
+								
+								<input type="button" value="Download png" onclick="downloadgraph2()" title="Download the chart as a png image. Might not work in older browsers."/>
+								<input type="button" value="Download Text" onclick="document.getElementById('sc:gettab2').click();" title="Download an ASCII file with detalied information about this graph"/>
+								<input type="button" value="Switch" onclick="switch2();"/>
+								<br/>
+								<br/>
+								<h3>Statistical details table</h3>
+								<p>The statistical details table displays the significance of enrichment of genes included as transcription factor targets among the input genes found in StemChecker. Significance (pvalue) calculated by the <a style="color:blue" target="_blank" href="http://en.wikipedia.org/wiki/Hypergeometric_distribution">hypergeometric test</a>, which assess the enrichment against the full annotated genome of the selected organism (mouse or human). The adjusted pvalue is calculated by <a style="color:blue" target="_blank" href="http://en.wikipedia.org/wiki/Bonferroni_correction">Bonferroni correction</a>. Click the overlapping genes number to see the id. Mouse over the set name to display the summary of the data set. Press the headers to order the columns.</p>
+								<br/>
+								
+						
+								<table class="sortable" id="dataT1" border="2">
+									<tr>
+										<th>Set Name</th>
+										<th>Set Size</th>
+										<th>Overlapping Genes</th>
+										<th>Pvalue</th>
+										<th>Adjusted Pvalue</th>
+									</tr>
+									<ui:repeat var="pv" value="#{stemChecker.pvalue2}">
+										<ui:fragment>
+											<tr>
+												<td>
+													<h:outputLink title="#{pv[7]}" value="stemsetdata.jsf?p=t#{pv[6]}" style="color:blue;text-decoration:none" target="new">#{pv[0]}</h:outputLink>
+												</td>
+												<td>#{pv[1]}</td>
+												<td>
+													<a onclick="genesPresent('#{pv[5]}')" style="color:blue" href="">#{pv[2]}</a>
+												</td>
+												<td sorttable_customkey="#{pv[4]}">#{pv[3]}</td>
+												<td sorttable_customkey="#{pv[9]}">#{pv[8]}</td>
+											</tr>
+										</ui:fragment>
+									</ui:repeat>
+								</table>
+								<input type="button" value="Download Table" onclick="document.getElementById('sc:gettab5').click();" title="Download the overlap table as a text file"/>
+								
+							</p:tab>
+						
+						
+						</p:tabView>
+						
+						
+					
+						
+					
+					
+					
+					</p:tab>
+				
+					<p:tab title="Stemness Signature Match">
+					
+						<h3>Checkerboard of individual input genes and stemness signatures</h3>
+						
+						<p>The checkerboard-like table displays the occurrence of all the input genes across the selected <i>stemness signatures</i>. Blue rectangles indicate 
+						that a gene is included in the corresponding <i>stemness signature</i>. Genes and signatures can be hidden from the display by clicking on the crosses 
+						next to them. The <i>stemness signatures</i> are color-coded by type of source according to the legend below the checkerboard.</p>						
+						
+						<br/>
+					
+						<table class="sortable" id="checkerboard" style="background-color:white">
+							<ui:repeat var="mat1" value="#{stemChecker.checkMatrix}">
+								<ui:fragment>
+									<tr class="tr#{mat1.id}">
+										<ui:repeat var="mat2" value="#{mat1.data}">
+											<ui:fragment rendered = "#{mat2[3] == 'base' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}"></td>
+											</ui:fragment>
+											<ui:fragment rendered = "#{mat2[3] == 'col' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}">
+													<table>
+														<td style='height: 360px;white-space: nowrap;vertical-align: bottom;'><div><span><img src='./images/#{mat2[0]}'></img></span></div></td>
+														<!--<td class="rotate"><div><span>#{mat2[0]}</span></div></td>-->
+           												<tr></tr>
+														<td style="text-align:center"><a onclick="removeTablePart('td#{mat2[2]}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a></td>
+														<tr></tr>
+           												<td style="color:#{mat2[4]};background-color:#{mat2[4]}">1</td>
+           											</table>
+												</td>
+											</ui:fragment>
+											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] !='' and mat2[0] !='Mm ' and mat2[0] !='Hs ' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">(#{mat2[1]})</h:outputLink>&nbsp;
+								    				<h:outputLink target="_new" value="http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(true, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
+								    				
+								    				
+								    			</td>
+											</ui:fragment>
+											
+											
+											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] =='' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[1]}">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> &nbsp;<h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<h:outputLink target="_new" value="http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(true, 'r=#{mat2[1]}');"/>
+								    			</td>
+											</ui:fragment>
+											
+											<ui:fragment rendered = "#{mat2[3] == 'row' and (mat2[0] =='Mm ' or mat2[0] =='Hs ') ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<h:outputLink target="_new" value="http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[0]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(true, 'r=#{mat2[0]}&amp;r=#{mat1.geneSymbol}');"/>
+								    			</td>
+											</ui:fragment>
+											
+											<ui:fragment rendered = "#{mat2[3] == 'other' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="#{mat2[0] == 1 ? 'color:#1F1F5C;background-color:#1F1F5C': 'color:white;background-color:white'}">#{mat2[0]}</td>
+											</ui:fragment>
+										</ui:repeat>
+									</tr>
+								</ui:fragment>
+							</ui:repeat>
+						</table>
+						
+						
+						<br/>
+						<input type="button" value="Download pdf" onclick="doPrint()" title="Download the checkerboard image as a pdf"/>
+						<br/>
+						
+						<input type="button" id="scn1" value="Search SCN" onclick="serachSCN(true)" title="Search StemCellNet for the selected genes" disabled="disabled"/>
+						
+						<br/>
+						<br/>
+						<h3>Color code for source type</h3>
+						
+						
+						<table>
+							<tr>
+								<td style="vertical-align:top;padding-right:1%">
+									<h:panelGroup rendered="#{not empty stemChecker.notFound}">
+										The following genes were not found in our id list:
+										<br/>
+										<ui:repeat var="nf" value="#{stemChecker.notFound}">
+											<ui:fragment>
+												#{nf}
+			 									<br/>
+											</ui:fragment>
+										</ui:repeat>
+									</h:panelGroup>
+								
+								</td>
+								<td>
+									<table>
+										<tr>
+											<td style='color:#FF0000;background-color:#FF0000'>1</td>
+											<td>TF Target Genes</td>
+										</tr>
+							
+										<tr>
+											<td style='color:#0DC4E0;background-color:#0DC4E0'>1</td>
+											<td>Expression Profiles</td>
+										</tr>
+						
+										<tr>
+											<td style='color:#75ad3e;background-color:#75ad3e'>1</td>
+											<td>RNAi Screens</td>
+										</tr>
+										<tr>
+											<td style='color:#FFFF66;background-color:#FFFF66'>1</td>
+											<td>Literature Curation</td>
+										</tr>						
+										<tr>
+											<td style='color:#220927;background-color:#220927'>1</td>
+											<td>Computationally Derived</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+								
+						<p><span style="color:red;">SCN </span>(<h:outputLink target="_new" value="http://stemcellnet.sysbiolab.eu/" style="color:blue">StemCellNet</h:outputLink>) is a web-server that allows you to interactively query, visualize and interrogate molecular networks in the context of stem cell biology. By pressing the (SCN) links you may query StemCellNet about the corresponding gene. Alternatively the user can also select one or more genes by clicking in checkboxes near the SCN link.</p>
+						
+						
+					</p:tab>
+					
+					<p:tab title="Transcription Factor Match">
+					
+					
+					
+						<h3>Checkerboard of individual input genes and TF target gene sets</h3>
+						
+						<p>This checkerboard-like table displays whether each input gene was identified as potential target gene in ChIP-chip and ChIP-Seq studies of pluripotency-associated transcription factors (TFs) in stem cells. Blue rectangles indicate that a gene is included in the set of potential target genes as determined in the corresponding study. Genes and TF target gene sets can be hidden from the display by clicking on the crosses next to them. The TF target gene sets are color coded with a rectangle underneath, according to the color scheme.</p>
+						
+						<br/>
+					
+					
+						<table class="sortable" id="checkerboard2" style="background-color:white">
+							<ui:repeat var="mat1" value="#{stemChecker.secondCheckMatrix}">
+								<ui:fragment>
+									<tr class="tr#{mat1.id}">
+										<ui:repeat var="mat2" value="#{mat1.data}">
+											<ui:fragment rendered = "#{mat2[3] == 'base' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}"></td>
+											</ui:fragment>
+											<ui:fragment rendered = "#{mat2[3] == 'col' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}">
+													<table>
+														<td style='height: 240px;white-space: nowrap;vertical-align: bottom;'><div><span><img src='./images/#{mat2[0]}'></img></span></div></td>
+														<!--<td class="rotate"><div><span>#{mat2[0]}</span></div></td>-->
+           												<tr></tr>
+														<td style="text-align:center"><a onclick="removeTablePart('td#{mat2[2]}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a></td>
+														<tr></tr>
+           												<td style="color:#{mat2[4]};background-color:#{mat2[4]}">1</td>
+           											</table>
+												</td>
+											</ui:fragment>
+											
+											
+											
+											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] !='' and mat2[0] !='Mm ' and mat2[0] !='Hs ' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">(#{mat2[1]})</h:outputLink>&nbsp;
+								    				<h:outputLink target="_new" value="http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(false, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
+								    			</td>
+											</ui:fragment>
+											
+											
+											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] =='' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[1]}">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> &nbsp;<h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<h:outputLink target="_new" value="http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(false, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
+								    			</td>
+											</ui:fragment>
+											
+											<ui:fragment rendered = "#{mat2[3] == 'row' and (mat2[0] =='Mm ' or mat2[0] =='Hs ') ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<h:outputLink target="_new" value="http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(false, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
+								    			</td>
+											</ui:fragment>
+											
+											
+											<!--
+											
+											<ui:fragment rendered = "#{mat2[3] == 'row' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="color:black;font-size:10px">
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}">(#{mat2[1]})</h:outputLink>
+								    			</td>
+											</ui:fragment>
+											
+											  -->
+											
+											<ui:fragment rendered = "#{mat2[3] == 'other' ? 'true': 'false'}">
+												<td class="td#{mat2[2]}" style="#{mat2[0] == 1 ? 'color:#1F1F5C;background-color:#1F1F5C': 'color:white;background-color:white'}">#{mat2[0]}</td>
+											</ui:fragment>
+										</ui:repeat>
+									</tr>
+								</ui:fragment>
+							</ui:repeat>
+						</table>
+						<br/>
+						<input type="button" value="Download pdf" onclick="doPrint2()" title="Download the checkerboard image as a pdf"/>
+						
+						<br/>
+						
+						<input type="button" id="scn2" value="Search SCN" onclick="serachSCN(false)" title="Search StemCellNet for the selected genes" disabled="disabled"/>
+						<br/>
+						<br/>
+						<h3>Color code for TFs</h3>
+						
+						<table>
+							<tr>
+								<td style="vertical-align:top;padding-right:1%">
+									<h:panelGroup rendered="#{not empty stemChecker.notFound}">
+										The following genes were not found in our id list:
+										<br/>
+										<ui:repeat var="nf" value="#{stemChecker.notFound}">
+											<ui:fragment>
+												#{nf}
+			 									<br/>
+											</ui:fragment>
+										</ui:repeat>
+									</h:panelGroup>
+								
+								</td>
+								<td>
+									<table>
+										<tr>
+											<td style='color:#1200D0;background-color:#1200D0'>1</td>
+											<td>Nanog</td>
+											<td style='color:#FFCF17;background-color:#FFCF17'>1</td>
+											<td>Sox2</td>
+											<td style='color:#9A9A9A;background-color:#9A9A9A'>1</td>
+											<td>Oct4</td>
+											<td style='color:#FFFF66;background-color:#FFFF66'>1</td>
+											<td>Ctcf</td>
+											<td style='color:#003300;background-color:#003300'>1</td>
+											<td>E2f1</td>
+											<td style='color:#3366CC;background-color:#3366CC'>1</td>
+											<td>Esrrb</td>
+											<td style='color:#990033;background-color:#990033'>1</td>
+											<td>Klf4</td>
+											<td style='color:#CCFFFF;background-color:#CCFFFF'>1</td>
+											<td>Mycn</td>
+											<td style='color:#52CC7A;background-color:#52CC7A'>1</td>
+											<td>Smad1</td>
+											<td style='color:#220927;background-color:#220927'>1</td>
+											<td>Stat3</td>
+											<td style='color:#006666;background-color:#006666'>1</td>
+											<td>Suz12</td>
+											<td style='color:#993300;background-color:#993300'>1</td>
+											<td>Tcfcp2l1</td>
+										</tr>
+										<tr>
+											<td style='color:#999966;background-color:#999966'>1</td>
+											<td>Zfx</td>
+											<td style='color:#003300;background-color:#003300'>1</td>
+											<td>Myc</td>
+											<td style='color:#000000;background-color:#000000'>1</td>
+											<td>DMAP1</td>
+											<td style='color:#CC00FF;background-color:#CC00FF'>1</td>
+											<td>E2F4</td>
+											<td style='color:#FF9933;background-color:#FF9933'>1</td>
+											<td>GCN5</td>
+											<td style='color:#75A3A3;background-color:#75A3A3'>1</td>
+											<td>MAX</td>
+											<td style='color:#000099;background-color:#000099'>1</td>
+											<td>TIP60</td>
+											<td style='color:#FF5050;background-color:#FF5050'>1</td>
+											<td>Tcf3</td>
+											<td style='color:#E843BF;background-color:#E843BF'>1</td>
+											<td>Nacc1</td>
+											<td style='color:#220927;background-color:#220927'>1</td>
+											<td>Nr0b1</td>
+											<td style='color:#5CE62E;background-color:#5CE62E'>1</td>
+											<td>Zfp281</td>
+											<td style='color:#FFA3FF;background-color:#FFA3FF'>1</td>
+											<td>Zfp42</td>
+										</tr>
+										<tr>
+											<td style='color:#334C80;background-color:#334C80'>1</td>
+											<td>Eed</td>
+											<td style='color:#FF0000;background-color:#FF0000'>1</td>
+											<td>Phc1</td>
+											<td style='color:#FFCC99;background-color:#FFCC99'>1</td>
+											<td>Rnf2</td>
+											<td style='color:#009999;background-color:#009999'>1</td>
+											<td>Tbx3</td>
+											<td style='color:#005C1F;background-color:#005C1F'>1</td>
+											<td>Smad4</td>
+											<td style='color:#4D8D62;background-color:#4D8D62'>1</td>
+											<td>Smad5</td>
+											<td style='color:#8DB69A;background-color:#8DB69A'>1</td>
+											<td>Smad2</td>
+											<td style='color:#C6DACC;background-color:#C6DACC'>1</td>
+											<td>Smad3</td>
+											<td style='color:#00FFFF;background-color:#00FFFF'>1</td>
+											<td>Ring1B</td>
+											<td style='color:#000080;background-color:#000080'>1</td>
+											<td>Ezh2</td>
+											<td style='color:#000F8F;background-color:#000F8F'>1</td>
+											<td>Gata2</td>
+											<td style='color:#2B4F07;background-color:#2B4F07'>1</td>
+											<td>Runx1</td>
+										</tr>
+										<tr>
+											<td style='color:#4D339A;background-color:#4D339A'>1</td>
+											<td>Fli1</td>
+											<td style='color:#AAB979;background-color:#AAB979'>1</td>
+											<td>Gfi1b</td>
+											<td style='color:#FF0AAB;background-color:#FF0AAB'>1</td>
+											<td>Lmo2</td>
+											<td style='color:#234927;background-color:#234927'>1</td>
+											<td>Lyl1</td>
+											<td style='color:#BFB978;background-color:#BFB978'>1</td>
+											<td>Pu1</td>
+											<td style='color:#FCCBAB;background-color:#FCCBAB'>1</td>
+											<td>Scl</td>
+											<td style='color:#FAA3FF;background-color:#FAA3FF'>1</td>
+											<td>Meis1</td>
+											<td style='color:#0FB900;background-color:#0FB900'>1</td>
+											<td>Tcf7</td>
+											
+											<td style='color:#CAA36F;background-color:#CAA36F'>1</td>
+											<td>Brn2</td>
+											<td style='color:#0FC810;background-color:#0FC810'>1</td>
+											<td>Erg</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<p><span style="color:red;">SCN </span>(<h:outputLink target="_new" value="http://stemcellnet.sysbiolab.eu/" style="color:blue">StemCellNet</h:outputLink>) is a web-server that allows you to interactively query, visualize and interrogate molecular networks in the context of stem cell biology. By pressing the (SCN) links you may query StemCellNet about the corresponding gene. Alternatively the user can also select one or more genes by clicking in checkboxes near the SCN link.</p>
+					
+					
+					</p:tab>
+				</p:tabView>
+				
+				
+				<h:inputHidden value="#{stemChecker.colorsCount}" id="rbg"/>
+				<h:inputHidden value="#{stemChecker.secondColorsCount}" id="rbg2"/>
+				<h:inputHidden value="#{stemChecker.countCellTypes}" id="rbg3"/>
+				
+				
+				<h:inputHidden value="#{stemChecker.colorsCountPerc}" id="rbg4"/>
+				<h:inputHidden value="#{stemChecker.secondColorsCountPerc}" id="rbg5"/>
+				<h:inputHidden value="#{stemChecker.countCellTypesPerc}" id="rbg6"/>
+				
+				
+				<h:inputHidden value="" id="dataToTab"/>
+				<h:inputHidden value="#{stemChecker.agreSignatureTypes}" id="agrSig"/>
+				<h:inputHidden value="#{stemChecker.agreTFData}" id="agrTF"/>
+				<h:inputHidden value="#{stemChecker.agreCellTypes}" id="agrCell"/>
+				
+				<h:inputHidden value="#{stemChecker.pvalueText}" id="ssigT"/>
+				<h:inputHidden value="#{stemChecker.pvalueText2}" id="tfT"/>
+				<h:inputHidden value="#{stemChecker.pvalueText3}" id="ccfT"/>
+				
+				
+				<br/>
+				<form>
+					<input type="button" value="New Query" onClick="parent.location='stemchecker.jsf'"/>
+				</form> 
+				
+			</p:outputPanel>
+		
+		
+		</p:outputPanel>
+		
+		<h:commandButton id="printb" value="echo side" action="#{stemChecker.tableToPDF}" onclick="preprinttable()" title="gimmi a pdf" style="display:none"/>
+		<h:commandButton id="printb2" value="echo side" action="#{stemChecker.tableToPDF}" onclick="preprinttable2()" title="gimmi a pdf" style="display:none"/>
+		<h:commandButton id="gettab1" value="tab1" action="#{stemChecker.getTab1}" onclick="downTab1()" style="display:none"/>
+		<h:commandButton id="gettab2" value="tab2" action="#{stemChecker.getTab1}" onclick="downTab2()" style="display:none"/>
+		<h:commandButton id="gettab3" value="tab3" action="#{stemChecker.getTab1}" onclick="downTab3()" style="display:none"/>
+		
+		
+		<h:commandButton id="gettab4" value="tab3" action="#{stemChecker.getTab2}" onclick="downTab4()" style="display:none"/>
+		<h:commandButton id="gettab5" value="tab3" action="#{stemChecker.getTab2}" onclick="downTab5()" style="display:none"/>
+		<h:commandButton id="gettab6" value="tab3" action="#{stemChecker.getTab2}" onclick="downTab6()" style="display:none"/>
+		
+		<h:inputHidden value="#{stemChecker.setsToUse}" id="settouse"/>
+		
+		<div style="display:none">
+			<p:commandButton id="search" value="Search" action="#{stemChecker.search}" update="sc:display" onclick="presearch()" oncomplete="postsearch()"/>	
+			<p:fileUpload id="upload" fileUploadListener="#{stemChecker.handleFileUpload}" update="sc:display" fileLimit="1" multiple="false" auto="true" oncomplete="disalbeIfEmpty()"/>
+	
+			<a href="stemsethelp.jsf" id="downitgoes" download="chart.png">stemsethelp.jsf</a>
+		
+		</div>
+	</div>
+	
+	<h:inputHidden id="toPDF"/>
+	<h:inputHidden id="radarLink"/>
+	<h:inputHidden id="over" value="#{overlapBrowser.genes}"/>
+
+	<h:commandLink id="overlink" value="gea" target="_blank" action="#{overlapBrowser.jump}" style="display:none"/>
+
+	<h:outputLink value="s" id="dalink" target="new" style="visibility: hidden">
+		linky
+	</h:outputLink>
+
+	
+</h:form>
+</h:body></html>
