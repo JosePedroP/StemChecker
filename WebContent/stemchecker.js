@@ -1428,7 +1428,7 @@ function serachSCN(one)
 	
 	var links = document.getElementById("sc:dalink");
 	
-	links.href = "http://193.136.227.168:8282/stemcellnet/stemCellNetRedirect.jsf?"+lin;
+	links.href = "http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?"+lin;
 	
 //	alert(links.href);
 	
