@@ -376,7 +376,7 @@
 														<td style='height: 360px;white-space: nowrap;vertical-align: bottom;'><div><span><img src='./images/#{mat2[0]}'></img></span></div></td>
 														<!--<td class="rotate"><div><span>#{mat2[0]}</span></div></td>-->
            												<tr></tr>
-														<td style="text-align:center"><a onclick="removeTablePart('td#{mat2[2]}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a></td>
+														<td style="text-align:center"><a onclick="removeTablePart('td#{mat2[2]}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a></td>
 														<tr></tr>
            												<td style="color:#{mat2[4]};background-color:#{mat2[4]}">1</td>
            											</table>
@@ -384,7 +384,7 @@
 											</ui:fragment>
 											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] !='' and mat2[0] !='Mm ' and mat2[0] !='Hs ' ? 'true': 'false'}">
 												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
-								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">(#{mat2[1]})</h:outputLink>&nbsp;
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">(#{mat2[1]})</h:outputLink>&nbsp;
 								    				<h:outputLink target="_new" value="http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(true, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
 								    				
 								    				
@@ -394,14 +394,14 @@
 											
 											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] =='' ? 'true': 'false'}">
 												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[1]}">
-								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> &nbsp;<h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> &nbsp;<h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
 								    				<h:outputLink target="_new" value="http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(true, 'r=#{mat2[1]}');"/>
 								    			</td>
 											</ui:fragment>
 											
 											<ui:fragment rendered = "#{mat2[3] == 'row' and (mat2[0] =='Mm ' or mat2[0] =='Hs ') ? 'true': 'false'}">
 												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
-								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
 								    				<h:outputLink target="_new" value="http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[0]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(true, 'r=#{mat2[0]}&amp;r=#{mat1.geneSymbol}');"/>
 								    			</td>
 											</ui:fragment>
@@ -501,7 +501,7 @@
 														<td style='height: 240px;white-space: nowrap;vertical-align: bottom;'><div><span><img src='./images/#{mat2[0]}'></img></span></div></td>
 														<!--<td class="rotate"><div><span>#{mat2[0]}</span></div></td>-->
            												<tr></tr>
-														<td style="text-align:center"><a onclick="removeTablePart('td#{mat2[2]}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a></td>
+														<td style="text-align:center"><a onclick="removeTablePart('td#{mat2[2]}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a></td>
 														<tr></tr>
            												<td style="color:#{mat2[4]};background-color:#{mat2[4]}">1</td>
            											</table>
@@ -512,7 +512,7 @@
 											
 											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] !='' and mat2[0] !='Mm ' and mat2[0] !='Hs ' ? 'true': 'false'}">
 												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
-								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">(#{mat2[1]})</h:outputLink>&nbsp;
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">(#{mat2[1]})</h:outputLink>&nbsp;
 								    				<h:outputLink target="_new" value="http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(false, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
 								    			</td>
 											</ui:fragment>
@@ -520,14 +520,14 @@
 											
 											<ui:fragment rendered = "#{mat2[3] == 'row' and mat2[0] =='' ? 'true': 'false'}">
 												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[1]}">
-								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> &nbsp;<h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> &nbsp;<h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
 								    				<h:outputLink target="_new" value="http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(false, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
 								    			</td>
 											</ui:fragment>
 											
 											<ui:fragment rendered = "#{mat2[3] == 'row' and (mat2[0] =='Mm ' or mat2[0] =='Hs ') ? 'true': 'false'}">
 												<td class="td#{mat2[2]}" style="color:black;font-size:10px" sorttable_customkey="#{mat2[0]}">
-								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" href="" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
+								    				<a onclick="removeTablePart('tr#{mat1.id}');" style="color:black" onmouseover="style='cursor: pointer;color:red;'" onmouseout="style='color:black;'">X</a> #{mat2[0]} <h:outputLink target="_new" value="http://www.ncbi.nlm.nih.gov/gene/?term=#{mat2[1]}" rendered ="#{mat2[1] == -1 || mat2[1] == -2 ? 'false': 'true'}" style="color:blue">#{mat2[1]}</h:outputLink>&nbsp;
 								    				<h:outputLink target="_new" value="http://193.136.227.181:8080/stemcellnet/stemCellNetRedirect.jsf?r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}" style="color:red">SCN</h:outputLink><h:selectBooleanCheckbox onclick="addToChecked(false, 'r=#{mat2[1]}&amp;r=#{mat1.geneSymbol}');"/>
 								    			</td>
 											</ui:fragment>
